@@ -49,20 +49,20 @@ reboot
 
 这就是在PVE上升级内核程序的方法。😊
 
-(1) PVE详细安装op、ikuai教程，含修改国内源、直通、更新内核-软路由,x86系统,openwrt(x86),Router OS 等-恩山无线论坛. https://www.right.com.cn/forum/thread-8106799-1-1.html.
-(2) PVE版本升级及内核升级方法 - dirgo - 博客园. https://www.cnblogs.com/dirgo/p/17173858.html.
-(3) PVE版本升级及内核升级方法 - dirgo - 博客园. https://bing.com/search?q=pve+%e5%8d%87%e7%ba%a7%e5%86%85%e6%a0%b8%e7%a8%8b%e5%ba%8f.
-(4) pve下j6413,N5105等直通核显给windows - 知乎 - 知乎专栏. https://zhuanlan.zhihu.com/p/636283122.
-(5) undefined. https://pan.baidu.com/s/1g0ZrI5M89TG3YAGfP47a-Q.
+(1) PVE详细安装op、ikuai教程，含修改国内源、直通、更新内核-软路由,x86系统,openwrt(x86),Router OS 等-恩山无线论坛. <https://www.right.com.cn/forum/thread-8106799-1-1.html>.
+(2) PVE版本升级及内核升级方法 - dirgo - 博客园. <https://www.cnblogs.com/dirgo/p/17173858.html>.
+(3) PVE版本升级及内核升级方法 - dirgo - 博客园. <https://bing.com/search?q=pve+%e5%8d%87%e7%ba%a7%e5%86%85%e6%a0%b8%e7%a8%8b%e5%ba%8f>.
+(4) pve下j6413,N5105等直通核显给windows - 知乎 - 知乎专栏. <https://zhuanlan.zhihu.com/p/636283122>.
+(5) undefined. <https://pan.baidu.com/s/1g0ZrI5M89TG3YAGfP47a-Q>.
 
 # 2. pve 安装微码
 
-(1) 在 Proxmox VE（PVE）安装最新微码（microcode），改善 N5105 虚拟机死机问题 - 叶寻的博客. https://bing.com/search?q=pve+%e5%ae%89%e8%a3%85%e5%be%ae%e7%a0%81.
-(2) PVE下intel-microcode英特尔微码更新修复处理器漏洞错误增强稳定 - 西瓜视频. https://www.ixigua.com/7221328137244803617.
-(3) PVE详细安装op、ikuai教程，含修改国内源、直通、更新内核-软路由,x86系统,openwrt(x86),Router OS 等-恩山无线论坛. https://www.right.com.cn/forum/thread-8106799-1-1.html.
-(4) [ Proxmox 折腾手记 ] PVE系统安装 - 哔哩哔哩. https://www.bilibili.com/read/cv17648783/.
-(5) PVE下intel-microcode英特尔微码更新 Linux通用 用于修复处理器漏洞和错误 增强稳定性 - YouTube. https://www.youtube.com/watch?v=L4PwbLPU-kc.
-(6) undefined. https://pan.baidu.com/s/1g0ZrI5M89TG3YAGfP47a-Q.
+(1) 在 Proxmox VE（PVE）安装最新微码（microcode），改善 N5105 虚拟机死机问题 - 叶寻的博客. <https://bing.com/search?q=pve+%e5%ae%89%e8%a3%85%e5%be%ae%e7%a0%81>.
+(2) PVE下intel-microcode英特尔微码更新修复处理器漏洞错误增强稳定 - 西瓜视频. <https://www.ixigua.com/7221328137244803617>.
+(3) PVE详细安装op、ikuai教程，含修改国内源、直通、更新内核-软路由,x86系统,openwrt(x86),Router OS 等-恩山无线论坛. <https://www.right.com.cn/forum/thread-8106799-1-1.html>.
+(4) [ Proxmox 折腾手记 ] PVE系统安装 - 哔哩哔哩. <https://www.bilibili.com/read/cv17648783/>.
+(5) PVE下intel-microcode英特尔微码更新 Linux通用 用于修复处理器漏洞和错误 增强稳定性 - YouTube. <https://www.youtube.com/watch?v=L4PwbLPU-kc>.
+(6) undefined. <https://pan.baidu.com/s/1g0ZrI5M89TG3YAGfP47a-Q>.
 
 ## 2.1. 方法1
 
@@ -179,9 +179,9 @@ qm importdisk 100 /var/lib/vz/template/iso/openwrt.img local-lvm
 
 <!-- /TOC -->
 
-(3) 在 PVE 上安装 OpenWRT | openwrt学习笔记. https://skyao.io/learning-openwrt/docs/installation/pve/.
-(4) OpenWrt | PVE环境下纯净版安装 - 知乎 - 知乎专栏. https://zhuanlan.zhihu.com/p/546723711.
-(5) 个人数字基建（3）：物理机安装 PVE，并新建 OpenWrt 虚拟机 - 知乎. https://zhuanlan.zhihu.com/p/662654164.
+(3) 在 PVE 上安装 OpenWRT | openwrt学习笔记. <https://skyao.io/learning-openwrt/docs/installation/pve/>.
+(4) OpenWrt | PVE环境下纯净版安装 - 知乎 - 知乎专栏. <https://zhuanlan.zhihu.com/p/546723711>.
+(5) 个人数字基建（3）：物理机安装 PVE，并新建 OpenWrt 虚拟机 - 知乎. <https://zhuanlan.zhihu.com/p/662654164>.
 
 # 4. 更换软件源
 
@@ -191,18 +191,21 @@ qm importdisk 100 /var/lib/vz/template/iso/openwrt.img local-lvm
 sed -i.bak "s#http://download.proxmox.com/debian#https://mirrors.ustc.edu.cn/proxmox/debian#g" /usr/share/perl5/PVE/CLI/pveceph.pm
 echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/ceph-pacific bullseye main" > /etc/apt/sources.list.d/ceph.list 
 ```
+
 ```bash
 sed -i.bak "s/^/#/" /etc/apt/sources.list.d/pve-enterprise.list
 echo "deb https://mirrors.ustc.edu.cn/proxmox/debian/pve bullseye pve-no-subscription" > /etc/apt/sources.list.d/pve-no-subscription.list 
 ```
+
 ```bash
 
 sed -i.bak "s#http://ftp.debian.org/debian#https://mirrors.163.com/debian/#g" /etc/apt/sources.list
 sed -i "s#http://security.debian.org#https://mirrors.163.com/debian-security#g" /etc/apt/sources.list
 ```
-阿里云/清华/华为云/中科大四选一，如果想换源，执行 ```cat /dev/null > /etc/apt/sources.list ``` 后再自行加源，#后面的为每步注释，表示这步是做了什么，不需要复制进命令行。
 
-## 4.2. 清华云：
+阿里云/清华/华为云/中科大四选一，如果想换源，执行 ```cat /dev/null > /etc/apt/sources.list``` 后再自行加源，#后面的为每步注释，表示这步是做了什么，不需要复制进命令行。
+
+## 4.2. 清华云
 
 ```bash
 cat > /etc/apt/sources.list <<EOF
@@ -216,7 +219,8 @@ deb https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main 
 deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security main contrib non-free
 EOF
 ```
-## 4.3. 阿里云：
+
+## 4.3. 阿里云
 
 ```bash
 cat > /etc/apt/sources.list <<EOF
@@ -230,7 +234,8 @@ deb http://mirrors.aliyun.com/debian-security/ bullseye-security main non-free c
 deb-src http://mirrors.aliyun.com/debian-security/ bullseye-security main non-free contrib
 EOF
 ```
-## 4.4. 华为云：
+
+## 4.4. 华为云
 
 ```bash
 cat > /etc/apt/sources.list <<EOF
@@ -243,7 +248,8 @@ deb-src https://mirrors.huaweicloud.com/debian/ buster-updates main contrib non-
 deb-src https://mirrors.huaweicloud.com/debian/ buster-backports main contrib non-free 
 EOF
 ```
-## 4.5. 中科大云：
+
+## 4.5. 中科大云
 
 ```bash
 cat > /etc/apt/sources.list <<EOF
@@ -257,35 +263,41 @@ deb-src https://mirrors.ustc.edu.cn/debian/ buster-backports main contrib non-fr
 deb-src https://mirrors.ustc.edu.cn/debian-security/ buster/updates main contrib non-free
 EOF
 ```
+
 # 5. 获取pve源密钥并写入/etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 
 ```bash
 wget http://mirrors.ustc.edu.cn/proxmox/debian/proxmox-release-bullseye.gpg -O /etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg
 ```
+
 # 6. 更改PVE源并写入/etc/apt/sources.list.d/pve-install-repo.list
 
 ```bash
 echo "deb http://mirrors.ustc.edu.cn/proxmox/debian/pve bullseye pve-no-subscription" >/etc/apt/sources.list.d/pve-install-repo.list
 ```
+
 # 7. 更改环境变量
 
 ```bash
 export LC_ALL=en_US.UTF-8
 ```
+
 # 8. 删除企业源
 
 ```bash
 rm -rf /etc/apt/sources.list.d/pve-enterprise.list
 ```
-# 9. 直通网卡 下面是可选选项，需要直通网卡请选择下面的步骤。
 
-## 9.1. Intel处理器：
+# 9. 直通网卡 下面是可选选项，需要直通网卡请选择下面的步骤
+
+## 9.1. Intel处理器
 
 输入
 
 ```bash
 nano /etc/default/grub
 ```
+
 找到  GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 修改为 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
 ctrl+X保存退出（输入Y确定）
@@ -310,11 +322,12 @@ update-initramfs -u -k all
 #重启
 reboot
 ```
-## 9.2. AMD处理器：
+
+## 9.2. AMD处理器
 
 步骤同Intel，只是将quiet intel_iommu=on修改为quiet amd_iommu=on
 
-# 10. 针对5105/5095/6005的CPU微码更新:
+# 10. 针对5105/5095/6005的CPU微码更新
 
 ## 10.1. 更新519内核
 
@@ -334,9 +347,10 @@ update-initramfs -u -k all
 ##  重启 
 reboot
 ```
+
 # 11. 安装pve tools工具
 
-https://gitee.com/codeshelter/pvetools.git
+<https://gitee.com/codeshelter/pvetools.git>
 
 ```bash
 echo "nameserver  8.8.8.8" >> /etc/resolv.conf && rm -rf pvetools && rm -rf /etc/apt/sources.list.d/pve-enterprise.list && export LC_ALL=en_US.UTF-8 && apt update && apt -y install git && git clone https://gitee.com/codeshelter/pvetools.git && echo "cd /root/pvetools && ./pvetools.sh" > pvetools/pvetools && chmod +x pvetools/pvetools* && ln -s /root/pvetools/pvetools /usr/local/bin/pvetools && pvetools
