@@ -1,4 +1,4 @@
-# 【Proxmox Ve Awesome】
+Proxmox Ve Awesome】
 
 - [1. pve 升级内核程序](#1-pve-升级内核程序)
 - [2. pve 安装微码](#2-pve-安装微码)
@@ -7,18 +7,18 @@
 - [3. pve 安装 openwrt](#3-pve-安装-openwrt)
 - [4. 更换软件源](#4-更换软件源)
   - [4.1. 更改ceph更新源](#41-更改ceph更新源)
-  - [4.2. 清华云：](#42-清华云)
-  - [4.3. 阿里云：](#43-阿里云)
-  - [4.4. 华为云：](#44-华为云)
-  - [4.5. 中科大云：](#45-中科大云)
+  - [4.2. 清华云](#42-清华云)
+  - [4.3. 阿里云](#43-阿里云)
+  - [4.4. 华为云](#44-华为云)
+  - [4.5. 中科大云](#45-中科大云)
 - [5. 获取pve源密钥并写入/etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg](#5-获取pve源密钥并写入etcapttrustedgpgdproxmox-release-bullseyegpg)
 - [6. 更改PVE源并写入/etc/apt/sources.list.d/pve-install-repo.list](#6-更改pve源并写入etcaptsourceslistdpve-install-repolist)
 - [7. 更改环境变量](#7-更改环境变量)
 - [8. 删除企业源](#8-删除企业源)
-- [9. 直通网卡 下面是可选选项，需要直通网卡请选择下面的步骤。](#9-直通网卡-下面是可选选项需要直通网卡请选择下面的步骤)
-  - [9.1. Intel处理器：](#91-intel处理器)
-  - [9.2. AMD处理器：](#92-amd处理器)
-- [10. 针对5105/5095/6005的CPU微码更新:](#10-针对510550956005的cpu微码更新)
+- [9. 直通网卡 下面是可选选项，需要直通网卡请选择下面的步骤](#9-直通网卡-下面是可选选项需要直通网卡请选择下面的步骤)
+  - [9.1. Intel处理器](#91-intel处理器)
+  - [9.2. AMD处理器](#92-amd处理器)
+- [10. 针对5105/5095/6005的CPU微码更新](#10-针对510550956005的cpu微码更新)
   - [10.1. 更新519内核](#101-更新519内核)
 - [11. 安装pve tools工具](#11-安装pve-tools工具)
 
@@ -146,38 +146,6 @@ qm importdisk 100 /var/lib/vz/template/iso/openwrt.img local-lvm
 ```
 
 - 最后，您需要在PVE的管理界面上为虚拟机添加一个硬盘，选择刚刚导入的磁盘，调整磁盘的大小，启动虚拟机，进入控制台，按回车键，修改root密码和LAN IP地址，重启网络服务，然后您就可以通过浏览器访问OpenWRT的管理界面了。您可以参考[这篇文章](^5^)的详细步骤。
-
-<!-- TOC -->
-
-<!-- TOC -->
-
-- [pve 升级内核程序](#pve-%E5%8D%87%E7%BA%A7%E5%86%85%E6%A0%B8%E7%A8%8B%E5%BA%8F)
-- [pve 安装微码](#pve-%E5%AE%89%E8%A3%85%E5%BE%AE%E7%A0%81)
-  - [方法1](#%E6%96%B9%E6%B3%951)
-  - [方法2](#%E6%96%B9%E6%B3%952)
-- [更换软件源](#%E6%9B%B4%E6%8D%A2%E8%BD%AF%E4%BB%B6%E6%BA%90)
-  - [更改ceph更新源](#%E6%9B%B4%E6%94%B9ceph%E6%9B%B4%E6%96%B0%E6%BA%90)
-  - [清华云：](#%E6%B8%85%E5%8D%8E%E4%BA%91)
-  - [阿里云：](#%E9%98%BF%E9%87%8C%E4%BA%91)
-  - [华为云：](#%E5%8D%8E%E4%B8%BA%E4%BA%91)
-  - [中科大云：](#%E4%B8%AD%E7%A7%91%E5%A4%A7%E4%BA%91)
-- [获取pve源密钥并写入/etc/apt/trusted.gpg.d/proxmox-release-bullseye.gpg](#%E8%8E%B7%E5%8F%96pve%E6%BA%90%E5%AF%86%E9%92%A5%E5%B9%B6%E5%86%99%E5%85%A5etcapttrustedgpgdproxmox-release-bullseyegpg)
-- [更改PVE源并写入/etc/apt/sources.list.d/pve-install-repo.list](#%E6%9B%B4%E6%94%B9pve%E6%BA%90%E5%B9%B6%E5%86%99%E5%85%A5etcaptsourceslistdpve-install-repolist)
-- [更改环境变量](#%E6%9B%B4%E6%94%B9%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
-- [删除企业源](#%E5%88%A0%E9%99%A4%E4%BC%81%E4%B8%9A%E6%BA%90)
-- [直通网卡 下面是可选选项，需要直通网卡请选择下面的步骤。](#%E7%9B%B4%E9%80%9A%E7%BD%91%E5%8D%A1-%E4%B8%8B%E9%9D%A2%E6%98%AF%E5%8F%AF%E9%80%89%E9%80%89%E9%A1%B9%E9%9C%80%E8%A6%81%E7%9B%B4%E9%80%9A%E7%BD%91%E5%8D%A1%E8%AF%B7%E9%80%89%E6%8B%A9%E4%B8%8B%E9%9D%A2%E7%9A%84%E6%AD%A5%E9%AA%A4)
-  - [Intel处理器：](#intel%E5%A4%84%E7%90%86%E5%99%A8)
-  - [AMD处理器：](#amd%E5%A4%84%E7%90%86%E5%99%A8)
-- [针对5105/5095/6005的CPU微码更新:](#%E9%92%88%E5%AF%B9510550956005%E7%9A%84cpu%E5%BE%AE%E7%A0%81%E6%9B%B4%E6%96%B0)
-  - [更新519内核](#%E6%9B%B4%E6%96%B0519%E5%86%85%E6%A0%B8)
-- [安装pve tools工具](#%E5%AE%89%E8%A3%85pve-tools%E5%B7%A5%E5%85%B7)
-
-<!-- /TOC -->5/6005的CPU微码更新:](#%E9%92%88%E5%AF%B9510550956005%E7%9A%84cpu%E5%BE%AE%E7%A0%81%E6%9B%B4%E6%96%B0)
-
-- [更新519内核](#%E6%9B%B4%E6%96%B0519%E5%86%85%E6%A0%B8)
-- [安装pve tools工具](#%E5%AE%89%E8%A3%85pve-tools%E5%B7%A5%E5%85%B7)
-
-<!-- /TOC -->
 
 (3) 在 PVE 上安装 OpenWRT | openwrt学习笔记. <https://skyao.io/learning-openwrt/docs/installation/pve/>.
 (4) OpenWrt | PVE环境下纯净版安装 - 知乎 - 知乎专栏. <https://zhuanlan.zhihu.com/p/546723711>.
