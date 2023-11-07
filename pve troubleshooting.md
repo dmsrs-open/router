@@ -1,6 +1,58 @@
 # pve troubleshooting
 
 ```log
+Nov 07 22:39:52 pve kernel: ------------[ cut here ]------------
+Nov 07 22:39:52 pve kernel: WARNING: CPU: 3 PID: 8577 at arch/x86/kvm/mmu/mmu.c:6949 kvm_nx_huge_page_recovery_worker+0x3c4/0x410 [kvm]
+Nov 07 22:39:52 pve kernel: Modules linked in: veth tcp_diag inet_diag ebtable_filter ebtables ip_set ip6table_raw iptable_raw ip6table_filter ip6_tables iptable_filter bpfilter nf_tables bonding tls softdog sunrpc nfnetlink_log nfnetlink binfmt_misc intel_rapl_msr intel_rapl_common intel_tcc_cooling x86_pkg_temp_thermal intel_powerclamp coretemp kvm_intel mei_pxp mei_hdcp i915 drm_buddy kvm ttm crct10dif_pclmul polyval_clmulni drm_display_helper polyval_generic ghash_clmulni_intel sha512_ssse3 aesni_intel cec crypto_simd rc_core cryptd mei_me drm_kms_helper ee1004 rapl i2c_algo_bit syscopyarea intel_cstate pcspkr serio_raw sysfillrect sysimgblt intel_xhci_usb_role_switch mei acpi_pad mac_hid zfs(PO) zunicode(PO) zzstd(O) zlua(O) zavl(PO) icp(PO) zcommon(PO) znvpair(PO) spl(O) vhost_net vhost vhost_iotlb tap vfio_pci vfio_pci_core irqbypass vfio_iommu_type1 vfio iommufd drm efi_pstore dmi_sysfs ip_tables x_tables autofs4 btrfs blake2b_generic xor raid6_pq simplefb dm_thin_pool dm_persistent_data
+Nov 07 22:39:52 pve kernel:  dm_bio_prison dm_bufio libcrc32c crc32_pclmul psmouse i2c_i801 xhci_pci xhci_pci_renesas i2c_smbus ahci e1000e xhci_hcd libahci video wmi
+Nov 07 22:39:52 pve kernel: CPU: 3 PID: 8577 Comm: kvm-nx-lpage-re Tainted: P           O       6.2.16-3-pve #1
+Nov 07 22:39:52 pve kernel: Hardware name:  YL-SKUL6/YL-SKUL6, BIOS 5.12 05/28/2018
+Nov 07 22:39:52 pve kernel: RIP: 0010:kvm_nx_huge_page_recovery_worker+0x3c4/0x410 [kvm]
+Nov 07 22:39:52 pve kernel: Code: ff 48 8b 45 c0 4c 39 e0 0f 85 e6 fd ff ff 48 89 df e8 e0 e7 f9 ff e9 ed fd ff ff 49 bc ff ff ff ff ff ff ff 7f e9 c6 fc ff ff <0f> 0b e9 01 ff ff ff 48 8b 45 d0 65 48 2b 04 25 28 00 00 00 75 27
+Nov 07 22:39:52 pve kernel: RSP: 0018:ffffb0738458be40 EFLAGS: 00010246
+Nov 07 22:39:52 pve kernel: RAX: 0000000000000000 RBX: ffffb0738457d000 RCX: 0000000000000000
+Nov 07 22:39:52 pve kernel: RDX: 0000000000000000 RSI: 0000000000000000 RDI: 0000000000000000
+Nov 07 22:39:52 pve kernel: RBP: ffffb0738458bec0 R08: 0000000000000000 R09: 0000000000000000
+Nov 07 22:39:52 pve kernel: R10: ffff9b758ac19228 R11: 0000000000000000 R12: ffffb0738458be80
+Nov 07 22:39:52 pve kernel: R13: 0000000000000001 R14: 0000000000000006 R15: ffff9b758ac192b8
+Nov 07 22:39:52 pve kernel: FS:  0000000000000000(0000) GS:ffff9b7cced80000(0000) knlGS:0000000000000000
+Nov 07 22:39:52 pve kernel: CS:  0010 DS: 0000 ES: 0000 CR0: 0000000080050033
+Nov 07 22:39:52 pve kernel: CR2: 00007ff88b482000 CR3: 0000000381c10004 CR4: 00000000003726e0
+Nov 07 22:39:52 pve kernel: Call Trace:
+Nov 07 22:39:52 pve kernel:  <TASK>
+Nov 07 22:39:52 pve kernel:  ? __pfx_kvm_nx_huge_page_recovery_worker+0x10/0x10 [kvm]
+Nov 07 22:39:52 pve kernel:  kvm_vm_worker_thread+0x9d/0x1b0 [kvm]
+Nov 07 22:39:52 pve kernel:  ? __pfx_kvm_vm_worker_thread+0x10/0x10 [kvm]
+Nov 07 22:39:52 pve kernel:  kthread+0xe6/0x110
+Nov 07 22:39:52 pve kernel:  ? __pfx_kthread+0x10/0x10
+Nov 07 22:39:52 pve kernel:  ret_from_fork+0x29/0x50
+Nov 07 22:39:52 pve kernel:  </TASK>
+Nov 07 22:39:52 pve kernel: ---[ end trace 0000000000000000 ]---
+-- Reboot --
+```
+
+```log
+ov 07 22:41:57 pve pve-ha-lrm[989]: starting server
+Nov 07 22:41:57 pve pve-ha-lrm[989]: status change startup => wait_for_agent_lock
+Nov 07 22:41:57 pve systemd[1]: Started pve-ha-lrm.service - PVE Local HA Resource Manager Daemon.
+Nov 07 22:41:58 pve systemd[1]: Starting pve-guests.service - PVE guests...
+Nov 07 22:41:59 pve pve-guests[991]: <root@pam> starting task UPID:pve:000003E0:000005E8:654A4CB7:startall::root@pam:
+Nov 07 22:41:59 pve pve-guests[991]: <root@pam> end task UPID:pve:000003E0:000005E8:654A4CB7:startall::root@pam: OK
+Nov 07 22:41:59 pve systemd[1]: Finished pve-guests.service - PVE guests.
+Nov 07 22:41:59 pve systemd[1]: Starting pvescheduler.service - Proxmox VE scheduler...
+Nov 07 22:41:59 pve pvescheduler[994]: starting server
+Nov 07 22:41:59 pve systemd[1]: Started pvescheduler.service - Proxmox VE scheduler.
+Nov 07 22:41:59 pve systemd[1]: Reached target multi-user.target - Multi-User System.
+Nov 07 22:41:59 pve systemd[1]: Reached target graphical.target - Graphical Interface.
+Nov 07 22:41:59 pve systemd[1]: Starting systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP...
+Nov 07 22:41:59 pve systemd[1]: systemd-update-utmp-runlevel.service: Deactivated successfully.
+Nov 07 22:41:59 pve systemd[1]: Finished systemd-update-utmp-runlevel.service - Record Runlevel Change in UTMP.
+Nov 07 22:41:59 pve systemd[1]: Startup finished in 2.843s (firmware) + 6.596s (loader) + 4.713s (kernel) + 11.266s (userspace) = 25.420s.
+Nov 07 22:42:05 pve kernel: L1TF CPU bug present and SMT on, data leak possible. See CVE-2018-3646 and https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/l1tf.html for details.
+Nov 07 22:42:19 pve systemd[1]: systemd-fsckd.service: Deactivated successfully.
+```
+
+```log
 Nov 07 12:17:01 pve CRON[71345]: pam_unix(cron:session): session closed for user root
 Nov 07 13:17:01 pve CRON[79349]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
 Nov 07 13:17:01 pve CRON[79350]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)
@@ -242,10 +294,10 @@ Nov 07 19:22:18 pve kernel: ftrace: allocating 50923 entries in 199 pages
 Nov 07 19:22:18 pve kernel: ftrace: allocated 199 pages with 5 groups
 Nov 07 19:22:18 pve kernel: Dynamic Preempt: voluntary
 Nov 07 19:22:18 pve kernel: rcu: Preemptible hierarchical RCU implementation.
-Nov 07 19:22:18 pve kernel: rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=4.
-Nov 07 19:22:18 pve kernel: 	Trampoline variant of Tasks RCU enabled.
-Nov 07 19:22:18 pve kernel: 	Rude variant of Tasks RCU enabled.
-Nov 07 19:22:18 pve kernel: 	Tracing variant of Tasks RCU enabled.
+Nov 07 19:22:18 pve kernel: rcu:  RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=4.
+Nov 07 19:22:18 pve kernel:  Trampoline variant of Tasks RCU enabled.
+Nov 07 19:22:18 pve kernel:  Rude variant of Tasks RCU enabled.
+Nov 07 19:22:18 pve kernel:  Tracing variant of Tasks RCU enabled.
 Nov 07 19:22:18 pve kernel: rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
 Nov 07 19:22:18 pve kernel: rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
 Nov 07 19:22:18 pve kernel: NR_IRQS: 524544, nr_irqs: 1024, preallocated irqs: 16
@@ -308,7 +360,7 @@ Nov 07 19:22:18 pve kernel: ... fixed-purpose events:   3
 Nov 07 19:22:18 pve kernel: ... event mask:             000000070000000f
 Nov 07 19:22:18 pve kernel: Estimated ratio of average max frequency by base frequency (times 1024): 1175
 Nov 07 19:22:18 pve kernel: rcu: Hierarchical SRCU implementation.
-Nov 07 19:22:18 pve kernel: rcu: 	Max phase no-delay instances is 1000.
+Nov 07 19:22:18 pve kernel: rcu:  Max phase no-delay instances is 1000.
 Nov 07 19:22:18 pve kernel: NMI watchdog: Enabled. Permanently consumes one hw-PMU counter.
 Nov 07 19:22:18 pve kernel: smp: Bringing up secondary CPUs ...
 Nov 07 19:22:18 pve kernel: x86: Booting SMP configuration:
