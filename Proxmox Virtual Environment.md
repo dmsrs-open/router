@@ -1,4 +1,4 @@
-Proxmox Ve Awesome】
+<h1> Proxmox Ve Awesome </h1>
 
 - [1. pve 升级内核程序](#1-pve-升级内核程序)
 - [2. pve 安装微码](#2-pve-安装微码)
@@ -117,7 +117,7 @@ update-initramfs -u -k all
 
 也许会遇到如下问题
 
-```
+```bash
 dpkg: dependency problems prevent configuration of intel-microcode:
  intel-microcode depends on iucode-tool (>= 1.0); however:
   Package iucode-tool is not installed.
