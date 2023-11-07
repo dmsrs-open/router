@@ -1,5 +1,10 @@
 # pve troubleshooting
 
+VM中 关闭 ACPI Support
+安装微码
+Ikuai3.5.12
+网卡： virtIO类别， 关闭 Firewall
+
 ```log
 Nov 07 22:39:52 pve kernel: ------------[ cut here ]------------
 Nov 07 22:39:52 pve kernel: WARNING: CPU: 3 PID: 8577 at arch/x86/kvm/mmu/mmu.c:6949 kvm_nx_huge_page_recovery_worker+0x3c4/0x410 [kvm]
