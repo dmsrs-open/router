@@ -17,7 +17,10 @@ VT-D是io虚拟化。不是VT-X，具体请参考下面文章
 vi /etc/default/grub
 #在里面找到：GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 #然后修改为：GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
-#如果是amd cpu请改为：GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt"#如果是需要显卡直通，建议在cmdline再加一句video=vesafb:off video=efifb:off video=simplefb:off，加了之后，pve重启进内核后停留在一个画面，这是正常情况GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=vesafb:off video=efifb:off video=simplefb:off"
+#如果是amd cpu请改为：GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt"
+#如果是需要显卡直通，建议在cmdline再加一句video=vesafb:off video=efifb:off video=simplefb:off，加了之后，pve重启进内核后停留在一个画面，这是正常情况
+#GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on iommu=pt video=vesafb:off video=efifb:off video=simplefb:off"
+#GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction nofb textonly nomodeset video=efifb:off"
 ```
 
 ![](https://img.buduanwang.vip/2020/05/25/e04e0fb148c8c.png)
