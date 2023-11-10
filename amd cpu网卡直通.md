@@ -27,9 +27,9 @@ ProxmoxVE, NAS, AIO, PCIe Passthrough, IOMMU, VFIO, Ryzen, AMD, iGPU, SATA contr
 1. vm100：安装openmediavault，需直通sata控制器，这样可以对sata硬盘进行高级电源管理(可自动休眠）,并可监控S.M.A.R.T信息。
 2. vm101: 安装win10, 需直通GPU,和键鼠。这样可以在客厅的TV上当一台电脑用。
 
-![](https://pic2.zhimg.com/v2-68987d32d5214bf35467672affe477fd_b.jpg)
+![No Txt](https://pic2.zhimg.com/v2-68987d32d5214bf35467672affe477fd_b.jpg)
 
-![](https://pic2.zhimg.com/80/v2-68987d32d5214bf35467672affe477fd_720w.webp)
+![No Txt](https://pic2.zhimg.com/80/v2-68987d32d5214bf35467672affe477fd_720w.webp)
 
 My PVE-based Hypervisor Architecture
 
@@ -167,17 +167,17 @@ PVE web UI上新建虚拟机vm101(win10)，需直通键鼠(usb0),显卡(hostpci0
 
 hostpci0的主GPU(x-vga=1)若打开，则会关闭vnc连接。可以先关了以便于调试：待vnc连入win10桌面后打开远程桌面连接后在开。
 
-![](https://pic3.zhimg.com/v2-f2f3ca0bbe0a8bcb4b2680a194834c4e_b.jpg)
+![No Txt](https://pic3.zhimg.com/v2-f2f3ca0bbe0a8bcb4b2680a194834c4e_b.jpg)
 
-![](https://pic3.zhimg.com/80/v2-f2f3ca0bbe0a8bcb4b2680a194834c4e_720w.webp)
+![No Txt](https://pic3.zhimg.com/80/v2-f2f3ca0bbe0a8bcb4b2680a194834c4e_720w.webp)
 
 PVE: vm101(win10)图形化配置
 
 大功告成后，连接在RX460显卡上的TV跳出win10界面了，但还是有一个PCI设备未识别，根据AIDA64排查是设备描述为Red Hat Virtio Memory Balloon的PCI设备，安装[virtio-win-gt-x64.msi](https://link.zhihu.com/?target=https%3A//fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.208-1/virtio-win-gt-x64.msi) 驱动后解决<sup data-text="" data-url="https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#Windows_OS_Support" data-numero="8" data-draft-node="inline" data-draft-type="reference" data-tooltip="https://pve.proxmox.com/wiki/Windows_VirtIO_Drivers#Windows_OS_Support" data-tooltip-preset="white" data-tooltip-classname="ztext-referene-tooltip"><a id="ref_8_0" href="https://zhuanlan.zhihu.com/p/438793914#ref_8" data-reference-link="true" aria-labelledby="ref_8">[8]</a></sup>。
 
-![](https://pic3.zhimg.com/v2-b9a889a4db55e8935dc7c826e429a07a_b.jpg)
+![No Txt](https://pic3.zhimg.com/v2-b9a889a4db55e8935dc7c826e429a07a_b.jpg)
 
-![](https://pic3.zhimg.com/80/v2-b9a889a4db55e8935dc7c826e429a07a_720w.webp)
+![No Txt](https://pic3.zhimg.com/80/v2-b9a889a4db55e8935dc7c826e429a07a_720w.webp)
 
 vm101: win10桌面
 
@@ -187,17 +187,17 @@ vm101: win10桌面
 
 acs补丁开启后，SATA controller会被单独分组，如下图 添加Group 15为PCI设备。
 
-![](https://pic3.zhimg.com/v2-298d14346b6121e62307aabaaae5da5a_b.jpg)
+![No Txt](https://pic3.zhimg.com/v2-298d14346b6121e62307aabaaae5da5a_b.jpg)
 
-![](https://pic3.zhimg.com/80/v2-298d14346b6121e62307aabaaae5da5a_720w.webp)
+![No Txt](https://pic3.zhimg.com/80/v2-298d14346b6121e62307aabaaae5da5a_720w.webp)
 
 PVE: vm100(omv)图形化配置
 
 搞定后，OMV可完美支持S.M.A.R.T信息和高级电源管理(APM)，爽！
 
-![](https://pic4.zhimg.com/v2-359e820c8448ed0019127c67bcecb58b_b.jpg)
+![No Txt](https://pic4.zhimg.com/v2-359e820c8448ed0019127c67bcecb58b_b.jpg)
 
-![](https://pic4.zhimg.com/80/v2-359e820c8448ed0019127c67bcecb58b_720w.webp)
+![No Txt](https://pic4.zhimg.com/80/v2-359e820c8448ed0019127c67bcecb58b_720w.webp)
 
 OMV中的SMART信息
 
