@@ -246,8 +246,24 @@ rm -rf /etc/apt/sources.list.d/pve-enterprise.list
 nano /etc/default/grub
 ```
 
-找到  GRUB_CMDLINE_LINUX_DEFAULT="quiet"
-修改为 GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
+找到  
+
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+```
+
+修改为
+
+```bash
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on pcie_aspm=off"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt textonly nomodeset nofb pci=noaer pcie_acs_override=downstream,multifunction"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream video=efifb:off"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pci=assign-busses pcie_acs_override=downstream video=efifb:off"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction nofb textonly nomodeset video=efifb:off"
+```
+
 ctrl+X保存退出（输入Y确定）
 
 使用update-grub更新
