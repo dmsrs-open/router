@@ -12,7 +12,7 @@ else {
 }
 # | Where-Object { $_.Name -eq ".git" }
 # 遍历目录并查找.git目录
-Get-ChildItem -Path "G:\code\" -Depth 5 -Recurse -Directory -Force -Filter ".git"  |  ForEach-Object {
+Get-ChildItem -Path "G:\" -Depth 5 -Recurse -Directory -Force -Filter ".git"  |  ForEach-Object {
 
     # 获取当前.git所在目录的父目录（即项目根目录）
     $projectRoot = $_.Parent.FullName
@@ -36,5 +36,5 @@ Get-ChildItem -Path "G:\code\" -Depth 5 -Recurse -Directory -Force -Filter ".git
         Pop-Location
     }
 }
-Get-Content -Path $outputFile | Write-Output $_
+#Get-Content -Path $outputFile | Write-Output $_
 Write-Output "Git remote URLs have been written to $outputFile."

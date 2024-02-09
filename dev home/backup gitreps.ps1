@@ -1,47 +1,40 @@
 
 
-# origin  https://github.com/niubilitywindows/Symlinker.git (fetch)
-# origin  https://github.com/niubilitywindows/Symlinker.git (push)
-# origin  git@github.com:ATQQ/sugar-blog.git
+# origin  https://github.com/VitePressAwesome/vitepress-theme-vuetom.git (fetch)
+# origin  https://github.com/VitePressAwesome/vitepress-theme-vuetom.git (push)
+# upstream        https://github.com/lauset/vitepress-theme-vuetom.git (fetch)
+# upstream        https://github.com/lauset/vitepress-theme-vuetom.git (push)
 
-# 定义输出文件路径
-$outputFile = "G:\code\RemoteUrls.txt"
+Push-Location "G:\vPress\vitepress-theme-vuetom"
 
-# 清空或创建新的输出文件
+# 获取 Git 仓库的所有 remote 的 name 和 path
+$remotes = git remote -v
 
-if ( Test-Path -Path $outputFile -Type Leaf) {
-    Clear-Content -Path $outputFile -Force
+#$remotes.GetEnumerator() | Format-Table -AutoSize
+# 创建一个空的哈希表，用于存储不重复的 path
+$paths = @{}
+
+# 遍历每个 remote
+foreach ($remote in $remotes) {
+
+	echo "remote =====>" $remote
+	# 用空格分割 remote 的 name 和 path
+	$parts = $remote.Split(" ")
+
+	# 获取 remote 的 name
+	$name = $parts[0]
+	# 获取 remote 的 path，并去掉括号
+	$path = $parts[1].Trim("()")
+
+	echo "          $name ====> $path"
+	# 如果哈希表中没有该 path，就添加到哈希表中，并将 name 作为值
+	#if (-not $paths.ContainsKey($path)) {
+		$paths[$path] = $name
+	#}
 }
-else {
-    Out-File -FilePath $outputFile utf8
-}
-# | Where-Object { $_.Name -eq ".git" }
-# 遍历目录并查找.git目录
-Get-ChildItem -Path "E:\code_learn\" -Depth 5 -Recurse -Directory -Force -Filter ".git"  |  ForEach-Object {
 
-    # 获取当前.git所在目录的父目录（即项目根目录）
-    $projectRoot = $_.Parent.FullName
-    #Write-Output $projectRoot
-    # 切换到项目根目录并获取远程URL
-    Push-Location $projectRoot
-    try {
-        git clean -xfd
-        # git remote show会列出远程仓库详细信息，我们提取URL部分
-        # $remoteInfo = git remote -v
-        # Write-Output $remoteInfo
-        # foreach ($line in $remoteInfo) {
-        #     if ($line -match '^\s*(fetch|push)\s+(\S+)\s+(https?://.+)$') {
-        #         $url = $matches[3]
-        #         Write-Output $url
-        #         Add-Content -Path $outputFile -Value "$projectRoot`t$url"
-        #     }
-        # }
-    }
-    finally {
-        # 确保不管是否成功都返回上一级目录
-        Pop-Location
-    }
-}
-#Get-Content -Path $outputFile | Write-Output $_
-Write-Output "Git remote URLs have been written to $outputFile."
-
+# 输出哈希表中的每个键值对，即不重复的 path 和对应的 name
+" "
+" "
+"out>>>> "
+$paths.GetEnumerator() | Format-Table -AutoSize
