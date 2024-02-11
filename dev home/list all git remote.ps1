@@ -4,12 +4,6 @@ $outputFile = "E:\RemoteUrls.json"
 
 # 清空或创建新的输出文件
 
-if ( Test-Path -Path $outputFile -Type Leaf) {
-	Clear-Content -Path $outputFile -Force
-}
-else {
-	Out-File -FilePath $outputFile utf8
-}
 $regex = [Regex]"(\w+)[ \s]+(\\t)*([\w:\/\.-]+)[ \s]+\((\w+)\)"
 $regex = [Regex]"(\w+)([ \s]+|[(\\t)]+)([@\w:\/\.-]+)[ \s]+\((\w+)\)"
 $repositories = @{}
@@ -32,8 +26,14 @@ ForEach-Object {
 		# 遍历每个 remote
 		foreach ($remote in $remotes) {
 			$r = $regex.Matches($remote)
-			if ($r.Groups.Count -ge 2) {
-				$rep[$r.Groups[1].value] = $r.Groups[3].value
+			if ($r.Groups.Count -ge 4) {
+				if ($rep[$r.Groups[1].value] ) {
+					$rep[$r.Groups[1].value][$r.Groups[4].value] = $r.Groups[3].value
+				}
+				else {
+					$rep[$r.Groups[1].value] = @{$r.Groups[4].value = $r.Groups[3].value }
+				}
+
 			}
 			else {
 				$index = 0
