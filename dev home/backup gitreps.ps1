@@ -1,40 +1,38 @@
+# 定义输出文件路径
+$outputFile = "G:\RemoteUrls.json"
 
 
-# origin  https://github.com/VitePressAwesome/vitepress-theme-vuetom.git (fetch)
-# origin  https://github.com/VitePressAwesome/vitepress-theme-vuetom.git (push)
-# upstream        https://github.com/lauset/vitepress-theme-vuetom.git (fetch)
-# upstream        https://github.com/lauset/vitepress-theme-vuetom.git (push)
+# 定义正则表达式
+$regex = [Regex]"(\w+)\s+([\w:\/\.-]+)\s+\((\w+)\)"
 
-Push-Location "G:\vPress\vitepress-theme-vuetom"
+# 遍历目录并查找.git目录，获取远程URL，转换为JSON，追加到输出文件
+Get-ChildItem -Path "G:\" -Depth 5 -Directory -Force -Filter ".git"  |
+ForEach-Object {
+	# 获取当前.git所在目录的父目录（即项目根目录）
+	$projectRoot = $_.Parent.FullName
+	$rep = @{}
+	$rep.local = $projectRoot
+	#$rep.remotes =@{}
+	#Write-Output $projectRoot
+	# 切换到项目根目录并获取远程URL
+	try {
+		$remotes = git remote -v
+		foreach ($remote in $remotes) {
+			$r = $regex.Matches($remote)
+			if ($r.Groups.Count -ge 3) {
+				$rep[$r.Groups[1].value] = $r.Groups[2].value
+			}else{
 
-# 获取 Git 仓库的所有 remote 的 name 和 path
-$remotes = git remote -v
+			}
+		}
+		##$rep | Add-Member -MemberType NoteProperty -Name local -Value $projectRoot
+		$rep
+	}
+	finally {
+		Pop-Location
+	}
+} |
+ConvertTo-Json -depth 5 > $outputFile
 
-#$remotes.GetEnumerator() | Format-Table -AutoSize
-# 创建一个空的哈希表，用于存储不重复的 path
-$paths = @{}
-
-# 遍历每个 remote
-foreach ($remote in $remotes) {
-
-	echo "remote =====>" $remote
-	# 用空格分割 remote 的 name 和 path
-	$parts = $remote.Split(" ")
-
-	# 获取 remote 的 name
-	$name = $parts[0]
-	# 获取 remote 的 path，并去掉括号
-	$path = $parts[1].Trim("()")
-
-	echo "          $name ====> $path"
-	# 如果哈希表中没有该 path，就添加到哈希表中，并将 name 作为值
-	#if (-not $paths.ContainsKey($path)) {
-		$paths[$path] = $name
-	#}
-}
-
-# 输出哈希表中的每个键值对，即不重复的 path 和对应的 name
-" "
-" "
-"out>>>> "
-$paths.GetEnumerator() | Format-Table -AutoSize
+# 输出结果
+Write-Output "Git remote URLs have been written to $outputFile."
