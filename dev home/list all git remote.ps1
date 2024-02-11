@@ -27,7 +27,7 @@ ForEach-Object {
 		foreach ($remote in $remotes) {
 			$r = $regex.Matches($remote)
 			if ($r.Groups.Count -ge 4) {
-				if ($rep[$r.Groups[1].value] ) {
+				if ($rep[$r.Groups[1].value]) {
 					$rep[$r.Groups[1].value][$r.Groups[4].value] = $r.Groups[3].value
 				}
 				else {
