@@ -1,6 +1,6 @@
-
+# origin\tgit@github.com:cnjimbo/cnjimbo.github.io.git (push)
 # 定义输出文件路径
-$outputFile = "G:\RemoteUrls.json"
+$outputFile = "E:\RemoteUrls.json"
 
 # 清空或创建新的输出文件
 
@@ -10,7 +10,8 @@ if ( Test-Path -Path $outputFile -Type Leaf) {
 else {
 	Out-File -FilePath $outputFile utf8
 }
-$regex = [Regex]"(\w+)\s+([\w:\/\.-]+)\s+\((\w+)\)"
+$regex = [Regex]"(\w+)[ \s]+(\\t)*([\w:\/\.-]+)[ \s]+\((\w+)\)"
+$regex = [Regex]"(\w+)([ \s]+|[(\\t)]+)([@\w:\/\.-]+)[ \s]+\((\w+)\)"
 $repositories = @{}
 # | Where-Object { $_.Name -eq ".git" }
 # 遍历目录并查找.git目录
@@ -31,7 +32,17 @@ ForEach-Object {
 		# 遍历每个 remote
 		foreach ($remote in $remotes) {
 			$r = $regex.Matches($remote)
-			$rep[$r.Groups[1].value] = $r.Groups[2].value
+			if ($r.Groups.Count -ge 2) {
+				$rep[$r.Groups[1].value] = $r.Groups[3].value
+			}
+			else {
+				$index = 0
+				$key = "remote"
+				while ($rep -contains $key) {
+					$key = "remote" + $index++
+				}
+				$rep[$key] = $remote
+			}
 		}
 		$repositories[$projectRoot] = $rep
 	}

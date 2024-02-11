@@ -1,7 +1,7 @@
 # 定义输出文件路径
-$outputFile = "G:\RemoteUrls.json"
+$outputFile = "E:\RemoteUrls.json"
 
-
+not worked
 # 定义正则表达式
 $regex = [Regex]"(\w+)\s+([\w:\/\.-]+)\s+\((\w+)\)"
 
