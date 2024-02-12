@@ -1,10 +1,8 @@
 # origin\tgit@github.com:cnjimbo/cnjimbo.github.io.git (push)
 # 定义输出文件路径
-$outputFile = "E:\RemoteUrls.json"
+$outputFile = "GithubUrls_$(Get-Date -Format "yyyyMMddHHmm").json"
 
 # 清空或创建新的输出文件
-
-$regex = [Regex]"(\w+)[ \s]+(\\t)*([\w:\/\.-]+)[ \s]+\((\w+)\)"
 $regex = [Regex]"(\w+)([ \s]+|[(\\t)]+)([@\w:\/\.-]+)[ \s]+\((\w+)\)"
 $repositories = @{}
 # | Where-Object { $_.Name -eq ".git" }

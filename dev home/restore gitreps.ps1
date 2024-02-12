@@ -1,10 +1,11 @@
 # 从JSON文件中读取数据并转换为对象
-$json = Get-Content -Raw -Path 'E:\RemoteUrls.json' | ConvertFrom-Json
+$json = Get-Content -Raw -Path 'GithubUrls_202402130010.json' | ConvertFrom-Json
 $root = "E:\testgithub"
+$configRoot="G:"
 # 遍历对象中的每个项目路径和存储库信息
 foreach ($item in $json.PSObject.Properties) {
 	# 获取项目路径
-	$projectPath = $item.Name.replace("G:" , $root)
+	$projectPath = $item.Name.replace($configRoot , $root)
 	$projectParentFolder = Split-Path -Parent $projectPath
 	$projectName = Split-Path -Leaf $projectPath
 	# 获取存储库信息
