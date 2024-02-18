@@ -1,6 +1,6 @@
 # origin\tgit@github.com:cnjimbo/cnjimbo.github.io.git (push)
 # 定义输出文件路径
-$outputFile = "./GithubUrls.json" #_$(Get-Date -Format "yyyyMMddHHmm")
+$outputFile = "./Pfi_GithubUrls.json" #_$(Get-Date -Format "yyyyMMddHHmm")
 
 $regex = [Regex]"(\w+)([ \s]+|[(\\t)]+)([@\w:\/\.-]+)[ \s]+\((\w+)\)"
 $repositories = @{}
@@ -9,13 +9,14 @@ function Test-GitUrl {
 		[Parameter(Mandatory = $true)] # 表示这个参数是必须的
 		[string]$RemoteUrl # 定义一个字符串类型的参数，表示远程仓库的 URL
 	)
+	return $true
 	# 尝试列出远程仓库的引用，如果成功，返回 $true，如果失败，返回 $false
 	git ls-remote $RemoteUrl > $null # 将输出重定向到空，避免显示在控制台
 	return $LASTEXITCODE -eq 0
 }
 # | Where-Object { $_.Name -eq ".git" }
 # 遍历目录并查找.git目录
-Get-ChildItem -Path "G:\" -Depth 5 -Directory -Force -Filter ".git"  |
+Get-ChildItem -Path "C:\ScriptsApplications" -Depth 5 -Directory -Force -Filter ".git"  |
 ForEach-Object {
 
 	# 获取当前.git所在目录的父目录（即项目根目录）
@@ -32,7 +33,7 @@ ForEach-Object {
 		$rep = @{}
 		if (-not $remotes -or $remotes.Count -eq 0) {
 			Write-Host "not valid git repo. $projectRoot"
-			$repo["desc"] = "not valid git repo."
+			$rep["desc"] = "not valid git repo."
 		}
 		else {
 			# 遍历每个 remote
