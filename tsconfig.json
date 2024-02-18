@@ -1,8 +1,8 @@
 // tsconfig.json
 {
   "compilerOptions": {
-    "target": "es6", // 或你希望的目标版本
-    "module": "NodeNext",
+    "target": "ES6", // 或你希望的目标版本
+    "module": "CommonJS",
     "sourceMap": true, // 生成对应的.map文件以支持源码映射调试
     "outDir": "./dist",
     // ... 其他编译选项

@@ -1,84 +1,86 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const fs = __importStar(require("fs"));
-const path = __importStar(require("path"));
-const child_process_1 = require("child_process");
-// 定义输出文件路径
-const outputFile = `GithubUrls_${new Date().toISOString().replace(/[:\-T]/g, '').slice(0, 14)}.json`;
-// 正则表达式匹配远程仓库信息
-const regex = /(\w+)([\s]+|[(\t)]+)([@\w:\/.-]+)[\s]+\((\w+)\)/;
-const projectRemotes = {};
-function testGitUrl(remoteUrl) {
-    try {
-        // 尝试列出远程仓库的引用，如果成功返回 true，否则返回 false
-        (0, child_process_1.execSync)(`git ls-remote ${remoteUrl}`, { stdio: ['ignore', 'ignore', 'ignore'] });
-        return true;
+// 导入fs模块，用于文件系统操作
+const fs = require("node:fs");
+const node_1 = require("lowdb/node");
+// Read or create db.json
+const defaultData = { posts: [] };
+const db = (0, node_1.JSONFilePreset)('db.json', defaultData);
+// 定义一个常量，用于存储json数据库的文件名
+const JSON_FILE = 'git_repos.json';
+// 定义一个函数，用于遍历目录，找到git库，并返回一个GitRepo数组
+function findGitRepos(dir, depth) {
+    var _a;
+    // 如果深度为0，说明已经达到最大层级，直接返回空数组
+    if (depth === 0) {
+        return [];
     }
-    catch (error) {
-        return false;
-    }
-}
-// 遍历目录并查找 .git 目录，同时处理远程仓库信息
-const rootPath = 'G:\\';
-for (let depth = 0; depth <= 5; depth++) {
-    const directories = fs.readdirSync(path.join(rootPath), { withFileTypes: true })
-        .filter(dirent => dirent.isDirectory() && dirent.name === '.git')
-        .map(dirent => path.dirname(dirent.name));
-    for (const gitDir of directories) {
-        const projectRoot = path.dirname(gitDir);
-        const remotesOutput = (0, child_process_1.execSync)('git remote -v', { cwd: projectRoot, encoding: 'utf8' });
-        const remotes = remotesOutput.split('\n');
-        if (remotes.length > 0) {
-            for (const remote of remotes) {
-                const match = regex.exec(remote);
-                if (match && match.length >= 4) {
-                    const remoteName = match[1].trim();
-                    const action = match[4].trim();
-                    const url = match[3].trim();
-                    if (testGitUrl(url)) {
-                        if (!projectRemotes[projectRoot]) {
-                            projectRemotes[projectRoot] = {};
-                        }
-                        if (!projectRemotes[projectRoot][remoteName]) {
-                            projectRemotes[projectRoot][remoteName] = {};
-                        }
-                        projectRemotes[projectRoot][remoteName][action] = url;
-                    }
-                    else {
-                        console.log(`Remote Url '${url}' can't access, it can't be restored. ${projectRoot}`);
-                    }
+    // 定义一个空数组，用于存储找到的git库
+    let gitRepos = [];
+    // 读取目录下的所有文件和子目录
+    let files = fs.readdirSync(dir);
+    // 遍历所有文件和子目录
+    for (let file of files) {
+        // 拼接完整的路径
+        let path = dir + '/' + file;
+        // 判断是否是目录
+        let isDir = fs.existsSync(path) && ((_a = fs.statSync(path)) === null || _a === void 0 ? void 0 : _a.isDirectory());
+        // 如果是目录，判断是否是git库
+        if (isDir) {
+            // 判断是否存在.git目录
+            let isGitRepo = fs.existsSync(path + '/.git');
+            // 如果是git库，获取其信息，并添加到数组中
+            if (isGitRepo) {
+                // 定义一个GitRepo对象，用于存储git库的信息
+                let gitRepo = {
+                    dir: path, // git库的目录地址
+                    remotes: [], // git库的所有远程地址
+                };
+                // 读取.git/config文件，获取所有远程地址
+                let config = fs.readFileSync(path + '/.git/config', 'utf-8');
+                // 使用正则表达式，匹配所有的url字段
+                let regex = /url = (.*)/g;
+                // 定义一个变量，用于存储匹配结果
+                let match;
+                // 循环匹配，直到没有更多结果
+                while ((match = regex.exec(config)) !== null) {
+                    // 获取匹配到的url，去除两端的空格，并添加到remotes数组中
+                    let url = match[1].trim();
+                    gitRepo.remotes.push(url);
                 }
+                // 将gitRepo对象添加到gitRepos数组中
+                gitRepos.push(gitRepo);
+            }
+            // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
+            else {
+                gitRepos = gitRepos.concat(findGitRepos(path, depth - 1));
             }
         }
-        else {
-            console.log(`Not a valid git repo. ${projectRoot}`);
-        }
     }
+    // 返回gitRepos数组
+    return gitRepos;
 }
-// 将处理后的结果转为 JSON 并写入文件
-fs.writeFileSync(outputFile, JSON.stringify(projectRemotes, null, 2), { encoding: 'utf8' });
-console.log(`Git remote URLs have been written to ${outputFile}.`);
+// 定义一个函数，用于创建或更新json数据库，保存git库的信息
+function saveGitRepos(gitRepos) {
+    // 定义一个空对象，用于存储git库的信息
+    let data = {};
+    // 遍历gitRepos数组，以目录地址为键，git库信息为值，添加到data对象中
+    for (let gitRepo of gitRepos) {
+        data[gitRepo.dir] = gitRepo;
+    }
+    // 将data对象转换为json字符串，格式化输出
+    let json = JSON.stringify(data, null, 2);
+    // 写入json数据库文件，如果文件不存在，会自动创建
+    fs.writeFileSync(JSON_FILE, json);
+}
+// 定义一个常量，用于存储当前目录
+const CURRENT_DIR = 'G:\\';
+// 定义一个常量，用于存储最大深度
+const MAX_DEPTH = 5;
+// 调用findGitRepos函数，遍历当前目录，找到git库
+let gitRepos = findGitRepos(CURRENT_DIR, MAX_DEPTH);
+// 调用saveGitRepos函数，创建或更新json数据库，保存git库的信息
+saveGitRepos(gitRepos);
+// 打印成功信息
+console.log('Done! Check the ' + JSON_FILE + ' file for the results.');
 //# sourceMappingURL=test.js.map

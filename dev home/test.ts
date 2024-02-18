@@ -1,5 +1,11 @@
 // 导入fs模块，用于文件系统操作
-import fs from 'fs';
+import * as fs from 'node:fs';
+
+import { JSONFilePreset } from 'lowdb/node'
+
+// Read or create db.json
+const defaultData = { posts: [] }
+const db = JSONFilePreset('db.json', defaultData)
 
 // 定义一个接口，用于描述git库的信息
 interface GitRepo {
@@ -29,7 +35,7 @@ function findGitRepos(dir: string, depth: number): GitRepo[] {
         let path = dir + '/' + file;
 
         // 判断是否是目录
-        let isDir =fs.existsSync(path) && fs.statSync(path)?.isDirectory();
+        let isDir = fs.existsSync(path) && fs.statSync(path)?.isDirectory();
 
         // 如果是目录，判断是否是git库
         if (isDir) {
