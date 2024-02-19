@@ -4,8 +4,7 @@ import * as fs from 'node:fs';
 import { JSONFilePreset } from 'lowdb/node'
 
 // Read or create db.json
-const defaultData = { posts: [] }
-const db = JSONFilePreset('db.json', defaultData)
+
 
 // 定义一个接口，用于描述git库的信息
 interface GitRepo {
@@ -99,16 +98,21 @@ function saveGitRepos(gitRepos: GitRepo[]): void {
 }
 
 // 定义一个常量，用于存储当前目录
-const CURRENT_DIR = 'G:\\';
+const CURRENT_DIR = 'C:\\ScriptsApplications';
 
 // 定义一个常量，用于存储最大深度
 const MAX_DEPTH = 5;
 
-// 调用findGitRepos函数，遍历当前目录，找到git库
-let gitRepos = findGitRepos(CURRENT_DIR, MAX_DEPTH);
+const defaultData: GitRepo[] = []
+JSONFilePreset('db.json', defaultData).then(db => {
 
-// 调用saveGitRepos函数，创建或更新json数据库，保存git库的信息
-saveGitRepos(gitRepos);
 
-// 打印成功信息
-console.log('Done! Check the ' + JSON_FILE + ' file for the results.');
+    // 调用findGitRepos函数，遍历当前目录，找到git库
+    let gitRepos = findGitRepos(CURRENT_DIR, MAX_DEPTH);
+    db.data = gitRepos
+    db.write()
+})
+    // 打印成功信息
+    .then(v => console.log('Done! Check the ' + JSON_FILE + ' file for the results.'))
+
+
