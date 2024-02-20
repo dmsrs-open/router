@@ -8,15 +8,15 @@ export type Repo = {
 export type Repos = {
     [dir: string]: Repo;
 };
-export type Factory = {
-    [typeName: string]: {
-        isType(ctx: Context): boolean;
-        GetRepoInfo(ctx: Context): Repo;
-    }
+export type Proccessor = {
+    name: string;
+    shouldProccess(ctx: Context): boolean;
+    GetRepoInfo(ctx: Context): Repo;
 }
+export type Factory = Set<Proccessor>;
 export type Context = {
     curDir: string;
     depth: number;
-    data: Low<Repos>;
+    db: Low<Repos>;
     rootDir: string;
 }
