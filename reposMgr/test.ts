@@ -3,6 +3,32 @@ import { JSONFilePreset } from 'lowdb/node'
 import { Repo, Repos, Factory, Context } from './types';
 import * as fs from 'node:fs';
 
+interface MergeOptions {
+    // 如果为 true，则进行深度合并，否则仅浅层合并
+    deep?: boolean;
+}
+
+function extend<T, U>(target: T, source: U, options?: MergeOptions): T & U {
+    const isDeep = options?.deep ?? false;
+
+    for (const key in source) {
+        if (source.hasOwnProperty(key)) {
+            const srcVal = source[key];
+            const tarVal = (target as any)[key];
+
+            if (isDeep && typeof srcVal === 'object' && srcVal !== null && !Array.isArray(srcVal) && typeof tarVal === 'object' && tarVal !== null) {
+                extend(tarVal as any, srcVal as any, { deep: true });
+            } else {
+                (target as any)[key] = srcVal;
+            }
+        }
+    }
+
+    return target as T & U;
+}
+
+
+
 let factory: Factory = new Set([
     {
         name: '.git',
@@ -12,7 +38,7 @@ let factory: Factory = new Set([
         GetRepoInfo(ctx: Context) {
             // 定义一个GitRepo对象，用于存储git库的信息
             let gitRepo: Repo = {
-                remotes: new Set<string>(), // git库的所有远程地址
+                remotes: [], // git库的所有远程地址
             };
 
             // 读取.git/config文件，获取所有远程地址
@@ -28,7 +54,8 @@ let factory: Factory = new Set([
             while ((match = regex.exec(config)) !== null) {
                 // 获取匹配到的url，去除两端的空格，并添加到remotes数组中
                 let url = match[1].trim();
-                gitRepo.remotes.add(url);
+                gitRepo.remotes.push(url);
+
             }
             return gitRepo;
         }
@@ -45,6 +72,7 @@ function findRepos(dir: string, depth: number, ctx: Context) {
         // 拼接完整的路径
         let path = dir + '/' + file;
         ctx.curDir = path;
+        ctx.depth = depth;
         factory.forEach((p) => {
             // 判断是否是目录
             let isDir = fs.existsSync(path) && fs.statSync(path)?.isDirectory();
@@ -58,8 +86,7 @@ function findRepos(dir: string, depth: number, ctx: Context) {
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
                     let gitRepo = p.GetRepoInfo(ctx)
-
-                    ctx.db.data[path] = (gitRepo);
+                    extend(ctx.db.data[path], gitRepo);
                 }
 
                 // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
@@ -95,6 +122,6 @@ JSONFilePreset('db.json', defaultData)
         return ctx;
     })
     // 打印成功信息
-    .then(v => console.log('Done! Check the ' + ctx.data + ' file for the results.'))
+    .then(ctx => console.log('Done! Check the ' + ctx.curDir + ' file for the results.'))
 
 
