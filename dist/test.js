@@ -9,7 +9,7 @@ let factory = new Set([
         shouldProccess(ctx) {
             return fs.existsSync(ctx.curDir + '/.git');
         },
-        GetRepoInfo(ctx) {
+        backupRepo(ctx) {
             // 定义一个GitRepo对象，用于存储git库的信息
             let gitRepo = {
                 remotes: [], // git库的所有远程地址
@@ -53,7 +53,7 @@ function findRepos(dir, depth, ctx) {
                 // 如果是git库，获取其信息，并添加到数组中
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
-                    let gitRepo = p.GetRepoInfo(ctx);
+                    let gitRepo = p.backupRepo(ctx);
                     ctx.db.data[key] = extend(ctx.db.data[key], gitRepo);
                 }
                 // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一

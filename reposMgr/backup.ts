@@ -1,6 +1,6 @@
 // 导入fs模块，用于文件系统操作
 import { JSONFilePreset } from 'lowdb/node'
-import { Repo, Repos, Factory, Context, MergeOptions } from './tets.d';
+import { Repo, Repos, Factory, Context, MergeOptions } from 'backup.d';
 import * as fs from 'node:fs';
 import path from 'path'
 // import { extend, removeDuplicates } from './factory';
@@ -31,7 +31,7 @@ let factory: Factory = new Set([
         shouldProccess(ctx: Context) {
             return fs.existsSync(path.join(ctx.curDir, '.git'));
         },
-        GetRepoInfo(ctx: Context) {
+        backupRepo(ctx: Context) {
             // 定义一个GitRepo对象，用于存储git库的信息
             let repo: Repo = {
                 name: 'unknown',
@@ -56,6 +56,11 @@ let factory: Factory = new Set([
             }
             repo.remotes = removeDuplicates(repo.remotes);
             return repo;
+        },
+
+        restoreRepo(ctx, repo) {
+
+            return false;
         }
     }
 ])
@@ -83,7 +88,7 @@ function findRepos(dir: string, depth: number, ctx: Context) {
                 // 如果是git库，获取其信息，并添加到数组中
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
-                    let repo = p.GetRepoInfo(ctx)
+                    let repo = p.backupRepo(ctx)
                     ctx.db.data[key] = extend(ctx.db.data[key], repo);
                 }
                 // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一

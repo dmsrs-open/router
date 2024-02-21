@@ -12,7 +12,8 @@ export type Repos = {
 export type Proccessor = {
     name: string;
     shouldProccess(ctx: Context): boolean;
-    GetRepoInfo(ctx: Context): Repo;
+    backupRepo(ctx: Context): Repo;
+    restoreRepo(ctx: Context, repo: Repo): boolean;
 }
 export type Factory = Set<Proccessor>;
 export type Context = {
