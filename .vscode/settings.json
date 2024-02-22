@@ -13,8 +13,8 @@
   "explorerExclude.backup": {},
   "CodeGPT.apiKey": "CodeGPT Plus Beta",
   "code-runner.executorMap": {
-    "typescript": "node --loader ts-node/esm $fullFileName",
-    "ts": "node --loader ts-node/esm $fullFileName",
+    "typescript": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName ",
+    "ts": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName",
     "javascript": "node",
   },
   "conventionalCommits.scopes": [

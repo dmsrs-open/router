@@ -1,64 +1,27 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Factory, Context, MergeOptions, Proccessor, Repo, Repos } from 'backup.d';
+import { Factory, Context, MergeOptions, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { extend, removeDuplicates } from './utils';
-
-class GitRepoProcessor implements Proccessor {
-    name: '.git'
-    shouldProccess(ctx: Context) {
-        return fs.existsSync(path.join(ctx.curDir, '.git'));
-    }
-    backupRepo(ctx: Context) {
-        // 定义一个GitRepo对象，用于存储git库的信息
-        let repo: Repo = {
-            name: 'unknown',
-            remotes: [], // git库的所有远程地址
-        };
-
-        // 读取.git/config文件，获取所有远程地址
-        let config = fs.readFileSync(path.join(ctx.curDir, '.git', 'config'), 'utf-8');
-
-        // 使用正则表达式，匹配所有的url字段
-        let regex = /url = (.*)/g;
-
-        // 定义一个变量，用于存储匹配结果
-        let match;
-
-        // 循环匹配，直到没有更多结果
-        while ((match = regex.exec(config)) !== null) {
-            // 获取匹配到的url，去除两端的空格，并添加到remotes数组中
-            let url = match[1].trim()
-            repo.name = url?.split('/')?.pop();
-            repo.remotes.push(url);
-        }
-        repo.remotes = removeDuplicates(repo.remotes);
-        return repo;
-    }
-
-    restoreRepo(ctx, repo) {
-
-        return false;
-    }
-}
+import { extend } from './utils';
+import { factory } from './factory';
 
 export async function findAndBackupRepos(currentDir: string, maxDepth: number): Promise<void> {
-    const defaultData: Repos = {}
-    const db = await JSONFilePreset('db.json', defaultData);
-
-    const ctx: Context = {
-        curDir: currentDir,
-        db,
-        rootDir: currentDir
-    };
-
-    findRepos(currentDir, maxDepth, ctx);
-
-    await new Promise(resolve => setTimeout(resolve, 0)); // 确保数据写入完成
-    db.write();
-
-    console.log('Done! Check the ' + ctx.rootDir + ' file for the results.');
+    let defaultData: Repos = {};
+    await JSONFilePreset('db.json', defaultData).then(db => {
+        const ctx: Context = {
+            curDir: currentDir,
+            db,
+            rootDir: currentDir
+        };
+        findRepos(currentDir, maxDepth, ctx);
+        return ctx;
+    })
+        .then(ctx => {
+            ctx.db.write();
+            return ctx;
+        })
+        .then(ctx => console.log('Done! Check the ' + ctx.rootDir + ' file for the results.'))
 }
 
 function findRepos(dir: string, depth: number, ctx: Context) {
