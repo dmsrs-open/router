@@ -1,0 +1,866 @@
+{
+  "G:\\/code/awesome-aop": {
+    "remotes": [
+      "https://gitee.com/dmsrs/awesome-aop.git"
+    ]
+  },
+  "G:\\/code/BingGPT": {
+    "remotes": [
+      "https://gitee.com/dmsrs/BingGPT.git",
+      "https://github.com/dice2o/BingGPT.git"
+    ]
+  },
+  "G:\\/code/dmsrs": {
+    "remotes": [
+      "https://gitee.com/dmsrs/dmsrs.git"
+    ]
+  },
+  "G:\\/code/DmsrsAwesome": {
+    "remotes": [
+      "https://gitee.com/dmsrs/DmsrsAwesome.git",
+      "https://gitee.com/dmsrs/DmsrsAwesome.git"
+    ]
+  },
+  "G:\\/code/DotNetCorePlugins.git": {
+    "remotes": [
+      "https://gitee.com/code-shelter/DotNetCorePlugins.git"
+    ]
+  },
+  "G:\\/code/EmitMapper": {
+    "remotes": [
+      "https://github.com/niubilitynetcore/EmitMapper.git",
+      "https://github.com/niubilitynetcore/EmitMapper.git",
+      "https://gitee.com/code-shelter/EmitMapper.git"
+    ]
+  },
+  "G:\\/code/git-gears-cs": {
+    "remotes": [
+      "https://github.com/KageKirin/git-gears-cs.git"
+    ]
+  },
+  "G:\\/code/GM_config": {
+    "remotes": [
+      "https://github.com/cnjimbo/GM_config.git"
+    ]
+  },
+  "G:\\/code/graphql-client": {
+    "remotes": [
+      "https://github.com/graphql-dotnet/graphql-client.git"
+    ]
+  },
+  "G:\\/code/isotope": {
+    "remotes": [
+      "https://gitee.com/codeshelter/isotope.git",
+      "https://gitee.com/codeshelter/isotope.git"
+    ]
+  },
+  "G:\\/code/ReactiveETL": {
+    "remotes": [
+      "https://github.com/cnjimbo/ReactiveETL.git"
+    ]
+  },
+  "G:\\/code/router": {
+    "remotes": [
+      "https://gitee.com/dmsrs/router.git"
+    ]
+  },
+  "G:\\/code/TargetFrameworkMigrator": {
+    "remotes": [
+      "https://github.com/niubilitytools/TargetFrameworkMigrator.git"
+    ]
+  },
+  "G:\\/code/userscripts": {
+    "remotes": [
+      "https://gitee.com/dmsrs/userscripts.git",
+      "https://gitee.com/dmsrs/userscripts.git",
+      "https://github.com/niubilityfrontend/userscripts.git"
+    ]
+  },
+  "G:\\/code/vue-modern-resume": {
+    "remotes": [
+      "https://github.com/cnjimbo/vue-modern-resume.git"
+    ]
+  },
+  "G:\\/code_learn/abp": {
+    "remotes": [
+      "https://github.com/abpframework/abp.git"
+    ]
+  },
+  "G:\\/code_learn/abp-samples": {
+    "remotes": [
+      "https://github.com/abpframework/abp-samples.git"
+    ]
+  },
+  "G:\\/code_learn/Admin.NET": {
+    "remotes": [
+      "https://gitee.com/zuohuaijun/Admin.NET.git"
+    ]
+  },
+  "G:\\/code_learn/AspectCore-Framework": {
+    "remotes": [
+      "https://github.com/dotnetcore/AspectCore-Framework.git"
+    ]
+  },
+  "G:\\/code_learn/Blazor.Console": {
+    "remotes": [
+      "https://github.com/ardacetinkaya/Blazor.Console.git"
+    ]
+  },
+  "G:\\/code_learn/blog": {
+    "remotes": [
+      "https://github.com/kevinsheep/blog.git"
+    ]
+  },
+  "G:\\/code_learn/command-line-api": {
+    "remotes": [
+      "https://github.com/cnjimbo/command-line-api.git",
+      "https://github.com/cnjimbo/command-line-api.git"
+    ]
+  },
+  "G:\\/code_learn/Furion": {
+    "remotes": [
+      "https://gitee.com/dotnetchina/Furion.git"
+    ]
+  },
+  "G:\\/code_learn/magic-net": {
+    "remotes": [
+      "https://gitee.com/zhengguojing/magic-net.git"
+    ]
+  },
+  "G:\\/code_learn/MediatR": {
+    "remotes": [
+      "https://github.com/cnjimbo/MediatR.git"
+    ]
+  },
+  "G:\\/code_learn/Nerdbank.GitVersioning": {
+    "remotes": [
+      "https://github.com/dotnet/Nerdbank.GitVersioning.git"
+    ]
+  },
+  "G:\\/code_learn/OrchardCore": {
+    "remotes": [
+      "https://github.com/OrchardCMS/OrchardCore.git"
+    ]
+  },
+  "G:\\/code_learn/Serenity": {
+    "remotes": [
+      "https://github.com/serenity-is/Serenity.git"
+    ]
+  },
+  "G:\\/code_learn/SteamTools": {
+    "remotes": [
+      "https://github.com/BeyondDimension/SteamTools.git"
+    ]
+  },
+  "G:\\/code_learn/Symlinker": {
+    "remotes": [
+      "https://github.com/niubilitywindows/Symlinker.git"
+    ]
+  },
+  "G:\\/code_learn/vc-platform": {
+    "remotes": [
+      "https://github.com/VirtoCommerce/vc-platform.git"
+    ]
+  },
+  "G:\\/vPress/1595901624.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/1595901624.github.io.git"
+    ]
+  },
+  "G:\\/vPress/1cnjimbo.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/sugar-blog.git",
+      "https://github.com/cnjimbo/cnjimbo.github.io.git"
+    ]
+  },
+  "G:\\/vPress/abackup_cnjimbo.github.io": {
+    "remotes": [
+      "https://github.com/cnjimbo/cnjimbo.github.io.git",
+      "https://github.com/VitePressAwesome/sugar-blog.git"
+    ]
+  },
+  "G:\\/vPress/blog-theme": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/blog-theme.git",
+      "https://github.com/yysuen/blog.git"
+    ]
+  },
+  "G:\\/vPress/charles7c.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/charles7c.github.io.git",
+      "https://github.com/Charles7c/charles7c.github.io.git"
+    ]
+  },
+  "G:\\/vPress/cnjimbo.github.io": {
+    "remotes": [
+      "https://github.com/cnjimbo/cnjimbo.github.io.git"
+    ]
+  },
+  "G:\\/vPress/codeteenager.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/codeteenager.github.io.git"
+    ]
+  },
+  "G:\\/vPress/justin3go.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/justin3go.github.io.git",
+      "https://github.com/Justin3go/justin3go.github.io.git"
+    ]
+  },
+  "G:\\/vPress/liuly0322.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/liuly0322.github.io.git",
+      "https://github.com/liuly0322/liuly0322.github.io.git"
+    ]
+  },
+  "G:\\/vPress/lpdswing.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/lpdswing.github.io.git"
+    ]
+  },
+  "G:\\/vPress/mtgjson-website": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/mtgjson-website.git"
+    ]
+  },
+  "G:\\/vPress/npm-vue3": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/npm-vue3.git",
+      "https://github.com/codes-templates/npm-vue3.git"
+    ]
+  },
+  "G:\\/vPress/qisi007.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/qisi007.github.io.git"
+    ]
+  },
+  "G:\\/vPress/ruanyf-weekly": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/ruanyf-weekly.git"
+    ]
+  },
+  "G:\\/vPress/script-buttons": {
+    "remotes": [
+      "https://github.com/frontendniubility/script-buttons.git",
+      "https://github.com/jwaterfall/script-buttons.git"
+    ]
+  },
+  "G:\\/vPress/sugar-blog": {
+    "remotes": [
+      "https://github.com/ATQQ/sugar-blog.git"
+    ]
+  },
+  "G:\\/vPress/sujit-168.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/sujit-168.github.io.git",
+      "https://github.com/sujit-168/sujit-168.github.io.git"
+    ]
+  },
+  "G:\\/vPress/test/cnjimbo.github.io": {
+    "remotes": [
+      "git@github.com:cnjimbo/cnjimbo.github.io.git"
+    ]
+  },
+  "G:\\/vPress/vitepress-theme-reco": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-theme-reco.git",
+      "https://github.com/talexjs/theme.git"
+    ]
+  },
+  "G:\\/vPress/vitepress-theme-sakura": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-theme-sakura.git"
+    ]
+  },
+  "G:\\/vPress/vitepress-theme-vuetom": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-theme-vuetom.git",
+      "https://github.com/lauset/vitepress-theme-vuetom.git"
+    ]
+  },
+  "G:\\/vPress/vscode-extension-samples": {
+    "remotes": [
+      "https://github.com/microsoft/vscode-extension-samples.git"
+    ]
+  },
+  "G:\\/vPress/wbvi.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/wbvi.github.io.git",
+      "https://github.com/wbvi/wbvi.github.io.git"
+    ]
+  },
+  "G:\\/vPress/website": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/website.git"
+    ]
+  },
+  "G:\\/vPress/yuque-vitepress": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/yuque-vitepress.git"
+    ]
+  },
+  "G:\\/vPress/ZiuChen.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/ZiuChen.github.io.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/awesome-aop": {
+    "remotes": [
+      "https://gitee.com/dmsrs/awesome-aop.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/BingGPT": {
+    "remotes": [
+      "https://gitee.com/dmsrs/BingGPT.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/Bonobo.Git.Server": {
+    "remotes": [
+      "http://git.tsharp.org/Bonobo.Git.Server.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/certificate-toolbox": {
+    "remotes": [
+      "git@github.com:niubilities/certificate-toolbox.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/DbContextScope": {
+    "remotes": [
+      "https://github.com/niubilitydotnet/DbContextScope.git",
+      "https://github.com/yegor-mialyk/DbContextScope.git",
+      "https://github.com/Fignum/DbContextScope.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/DisruptiveSoftware.Cryptography.Tools1": {
+    "remotes": [
+      "git@github.com:niubilities/DisruptiveSoftware.Cryptography.Tools.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/dmsrs": {
+    "remotes": [
+      "https://gitee.com/dmsrs/dmsrs.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/DmsrsAwesome": {
+    "remotes": [
+      "https://gitee.com/dmsrs/DmsrsAwesome.git",
+      "https://github.com/niubilitynetcore/DmsrsAwesome.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/DotNetCorePlugins": {
+    "remotes": [
+      "https://gitee.com/code-shelter/DotNetCorePlugins.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/EmitMapper": {
+    "remotes": [
+      "git@github.com:niubilitynetcore/EmitMapper.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/ETL": {
+    "remotes": [
+      "https://gitee.com/dmsrs/ETL.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/Ext-EDF-Web-MVC": {
+    "remotes": [
+      "http://code.tsharp.org/Ext-EDF-Web-MVC.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/FastExpressionCompiler": {
+    "remotes": [
+      "git@github.com:niubilitynetcore/FastExpressionCompiler.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/git-awesome": {
+    "remotes": [
+      "https://github.com/cnjimbo/git-awesome.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/router": {
+    "remotes": [
+      "https://gitee.com/dmsrs/router.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/TSharp": {
+    "remotes": [
+      "https://github.com/niubilityappbox/TSharp.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code/vba": {
+    "remotes": [
+      "git@github.com:niubilities/vba.git",
+      "https://github.com/niubilities/vba.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/best-resume-ever": {
+    "remotes": [
+      "git@github.com:salomonelli/best-resume-ever.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/isotope": {
+    "remotes": [
+      "https://gitee.com/codeshelter/isotope.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/Isotope-JQuery-Plugin-Filtering-Sorting-Layouts": {
+    "remotes": [
+      "https://github.com/niubilityfrontend/Isotope-JQuery-Plugin-Filtering-Sorting-Layouts.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/masonry-packery-isotope-demo": {
+    "remotes": [
+      "https://github.com/englishextra/masonry-packery-isotope-demo.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/userscripts": {
+    "remotes": [
+      "https://gitee.com/tsharp/userscripts.git",
+      "https://github.com/niubilityfrontend/userscripts.git",
+      "git@gitee.com:tsharp/userscripts.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vite-plugin-monkey": {
+    "remotes": [
+      "https://gitee.com/tsharp/vite-plugin-monkey.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vite-plugin-userscript": {
+    "remotes": [
+      "https://github.com/niubilityfrontend/vite-plugin-userscript.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vite-templates": {
+    "remotes": [
+      "https://gitee.com/cnjimbo/vite-templates.git",
+      "https://gitee.com/HalseySpicy/Geeker-Admin.git",
+      "https://gitee.com/panjiachen/vue-admin-template.git",
+      "https://gitee.com/asdadsaf/react-admin-template.git",
+      "https://gitee.com/yiming_chang/pure-admin-thin.git",
+      "https://github.com/VaJoy/vite-plugin-cdn-import-async.git",
+      "https://github.com/WaliAblikim/Vue3-TDesign-admin.git",
+      "https://github.com/hiliyongke/vue3-admin-boilerplate.git",
+      "https://gitee.com/yiming_chang/vue-pure-admin.git",
+      "https://gitee.com/spiketyke/vue3_vite_ts.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vite-userscript-plugin": {
+    "remotes": [
+      "https://github.com/niubilityfrontend/vite-userscript-plugin.git",
+      "https://github.com/crashmax-dev/vite-userscript-template"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vitelearn-allin": {
+    "remotes": [
+      "https://gitee.com/tsharp/vitelearn-allin.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vscode-babel-compile-on-save": {
+    "remotes": [
+      "git@github.com:niubilitytools/vscode-babel-compile-on-save.git",
+      "https://github.com/asvetliakov/vscode-babel-compile-on-save.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vue-modern-resume": {
+    "remotes": [
+      "https://github.com/evryn/vue-modern-resume.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vue-resume": {
+    "remotes": [
+      "git@github.com:niubilityfrontend/vue-resume.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/vuetify-admin": {
+    "remotes": [
+      "git@github.com:okami101/vuetify-admin.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/Vuetify-Resume": {
+    "remotes": [
+      "git@github.com:niubilityfrontend/Vuetify-Resume.git",
+      "https://github.com/ashkan90/Vuetify-Resume.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-front/wx聊天应用/chat-app-backend": {
+    "remotes": [
+      "https://git.heroku.com/damp-brushlands-96654.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/abp": {
+    "remotes": [
+      "git@github.com:abpframework/abp.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/Admin.NET": {
+    "remotes": [
+      "https://gitee.com/zuohuaijun/Admin.NET.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/adnc": {
+    "remotes": [
+      "https://github.com/AlphaYu/adnc.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/aspnetcore-modular-monolith": {
+    "remotes": [
+      "https://github.com/thinktecture-labs/aspnetcore-modular-monolith.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/AuditLogging": {
+    "remotes": [
+      "git@github.com:skoruba/AuditLogging.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/dockpanelsuite": {
+    "remotes": [
+      "https://github.com/niubilitywindows/dockpanelsuite.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/DotnetSpider": {
+    "remotes": [
+      "git@github.com:dotnetcore/DotnetSpider.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/Elements": {
+    "remotes": [
+      "https://github.com/FlorianFe/Elements.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/EventBus/CAP": {
+    "remotes": [
+      "https://github.com/dotnetcore/CAP.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/EventBus/MediatR": {
+    "remotes": [
+      "https://github.com/jbogard/MediatR.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/EventBus/RedBus": {
+    "remotes": [
+      "https://github.com/mxjones/RedBus.git",
+      "https://gitee.com/codeshelter/RedBus.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/Furion": {
+    "remotes": [
+      "https://gitee.com/dotnetchina/Furion.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/git-gears-cs": {
+    "remotes": [
+      "https://github.com/niubilitytools/git-gears-cs.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/mavonEditor": {
+    "remotes": [
+      "git@github.com:niubilityfrontend/mavonEditor.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/modify-source-webpack-plugin": {
+    "remotes": [
+      "https://github.com/artemirq/modify-source-webpack-plugin.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/modular-monolith-aspnet-core-sample": {
+    "remotes": [
+      "https://github.com/iammukeshm/modular-monolith-aspnet-core-sample.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/module-shop": {
+    "remotes": [
+      "https://gitee.com/codeshelter/module-shop.git",
+      "https://github.com/trueai-org/module-shop.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/NetCoreMicroservicesSample": {
+    "remotes": [
+      "https://github.com/madslundt/NetCoreMicroservicesSample.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/nopCommerce": {
+    "remotes": [
+      "https://github.com/nopSolutions/nopCommerce.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/OpenAuth.Net": {
+    "remotes": [
+      "https://gitee.com/dotnetchina/OpenAuth.Net.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/OrchardCore": {
+    "remotes": [
+      "https://github.com/OrchardCMS/OrchardCore.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/osharp": {
+    "remotes": [
+      "git@github.com:dotnetcore/osharp.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/osharp-vben-admin": {
+    "remotes": [
+      "git@github.com:zionLZH/osharp-vben-admin.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/RibbonWinForms": {
+    "remotes": [
+      "https://github.com/niubilitywindows/RibbonWinForms.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/sentry-dotnet": {
+    "remotes": [
+      "https://github.com/getsentry/sentry-dotnet.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/Serenity": {
+    "remotes": [
+      "https://github.com/serenity-is/Serenity.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/Smartstore": {
+    "remotes": [
+      "https://github.com/smartstore/Smartstore.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/Util": {
+    "remotes": [
+      "git@github.com:niubilitynetcore/Util.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/vc-platform": {
+    "remotes": [
+      "https://github.com/VirtoCommerce/vc-platform.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/vc-storefront": {
+    "remotes": [
+      "https://github.com/VirtoCommerce/vc-storefront.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/War3Net": {
+    "remotes": [
+      "https://github.com/Drake53/War3Net.git",
+      "https://github.com/Drake53/CSharp.lua",
+      "https://github.com/Drake53/FastMDX",
+      "https://github.com/Drake53/JpegLibrary"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/ZRAdmin-vue": {
+    "remotes": [
+      "https://gitee.com/izory/ZRAdmin-vue.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-learn/ZrAdminNetCore": {
+    "remotes": [
+      "https://gitee.com/izory/ZrAdminNetCore.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-Pfizer/00_ChinaBidding": {
+    "remotes": [
+      "https://github.com/pfizer-commercial/ChinaBidding.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-Pfizer/00_TNT": {
+    "remotes": [
+      "https://github.com/pfizer-commercial/TNT.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-Pfizer/ChinaDigitalHub": {
+    "remotes": [
+      "https://github.com/pfizer-commercial/ChinaDigitalHub.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/99_ruanyf-weekly": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/ruanyf-weekly.git",
+      "https://github.com/plantree/ruanyf-weekly.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/adocs": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/adocs.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/blog": {
+    "remotes": [
+      "https://github.com/frontendniubility/blog.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/blog-theme": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/blog-theme.git",
+      "https://github.com/yysuen/blog.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/charles7c.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/charles7c.github.io.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/cnjimbo.github.io": {
+    "remotes": [
+      "https://github.com/cnjimbo/cnjimbo.github.io.git",
+      "https://github.com/VitePressAwesome/sugar-blog.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/codeteenager.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/codeteenager.github.io.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/flypeng-tool": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/flypeng-tool.git",
+      "https://github.com/flingyp/flypeng-tool.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/hdu-cs-wiki": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/hdu-cs-wiki.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/liuly0322.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/liuly0322.github.io.git",
+      "https://github.com/liuly0322/liuly0322.github.io.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/mtgjson-website": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/mtgjson-website.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/npm-vue3": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/npm-vue3.git",
+      "https://github.com/codes-templates/npm-vue3.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/qisi007.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/qisi007.github.io.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/strongQ.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/strongQ.github.io.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/sugar-blog": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/sugar-blog.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/test": {
+    "remotes": []
+  },
+  "C:\\ScriptsApplications/code-vPress/vite-plugin-vitepress-auto-sidebar": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vite-plugin-vitepress-auto-sidebar.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-blog-pure": {
+    "remotes": [
+      "https://github.com/frontendniubility/vitepress-blog-pure.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-blog-starter": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-blog-starter.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-blogmate": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-blogmate.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-doc": {
+    "remotes": [
+      "https://github.com/Yiov/vitepress-doc.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-docs": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-docs.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-export-pdf": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-export-pdf.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-fun": {
+    "remotes": [
+      "https://github.com/gumingWu/vitepress-fun.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-theme-reco": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-theme-reco.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-theme-sakura": {
+    "remotes": [
+      "https://github.com/flaribbit/vitepress-theme-sakura.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vitepress-theme-vuetom": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vitepress-theme-vuetom.git",
+      "https://github.com/lauset/vitepress-theme-vuetom.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/vuepress-theme-reco": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/vuepress-theme-reco.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/website": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/website.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/yuque-vitepress": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/yuque-vitepress.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vPress/ZiuChen.github.io": {
+    "remotes": [
+      "https://github.com/VitePressAwesome/ZiuChen.github.io.git",
+      "https://github.com/ZiuChen/ZiuChen.github.io.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vsextension/npm-scripts-auto-node": {
+    "remotes": [
+      "https://github.com/frontendniubility/npm-scripts-auto-node.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vsextension/script-buttons": {
+    "remotes": [
+      "https://github.com/frontendniubility/script-buttons.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vsextension/vscode-commit-message-editor": {
+    "remotes": [
+      "https://github.com/frontendniubility/vscode-commit-message-editor.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vsextension/vscode-conventional-commits": {
+    "remotes": [
+      "https://github.com/frontendniubility/vscode-conventional-commits.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vsextension/vscode-extension-samples": {
+    "remotes": [
+      "https://github.com/microsoft/vscode-extension-samples.git"
+    ]
+  },
+  "C:\\ScriptsApplications/code-vsextension/vscode-npm-scripts": {
+    "remotes": [
+      "https://github.com/frontendniubility/vscode-npm-scripts.git"
+    ]
+  }
+}

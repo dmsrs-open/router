@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.11.19",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "lowdb": "^7.0.1"
+  }
+}
