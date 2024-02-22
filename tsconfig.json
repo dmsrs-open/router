@@ -10,10 +10,11 @@
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "baseUrl": "./"
+    "baseUrl": "."
   },
   "allowTsInNodeModules": true,
-  "include": ["./**/*.ts"], // 指定要编译的源文件目录
+  "include": ["**/*.*"], // 指定要编译的源文件目录
+  "excude": ["node_modules/**/*"],
   "ts-node": {
     "allowTsInNodeModules": true
   }

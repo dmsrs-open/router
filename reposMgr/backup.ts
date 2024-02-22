@@ -8,20 +8,22 @@ import { factory } from './factory';
 
 export async function findAndBackupRepos(currentDir: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
-    await JSONFilePreset('db.json', defaultData).then(db => {
-        const ctx: Context = {
-            curDir: currentDir,
-            db,
-            rootDir: currentDir
-        };
-        findRepos(currentDir, maxDepth, ctx);
-        return ctx;
-    })
-        .then(ctx => {
-            ctx.db.write();
+    await JSONFilePreset('db.json', defaultData)
+        .then(db => {
+            const ctx: Context = {
+                curDir: currentDir,
+                db,
+                rootDir: currentDir
+            };
+            findRepos(currentDir, maxDepth, ctx);
+            return ctx;
+        })
+        .then(async ctx => {
+            await ctx.db.write()
             return ctx;
         })
         .then(ctx => console.log('Done! Check the ' + ctx.rootDir + ' file for the results.'))
+        .catch(err => console.error(err))
 }
 
 function findRepos(dir: string, depth: number, ctx: Context) {

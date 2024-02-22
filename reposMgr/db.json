@@ -89,6 +89,7 @@
   "\\code\\router": {
     "name": "router.git",
     "remotes": [
+      "https://github.com/frontendniubility/router.git",
       "https://gitee.com/dmsrs/router.git"
     ]
   },
