@@ -1,0 +1,24 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.history": true,
+    ".history": true
+  },
+  "explorerExclude.backup": {},
+  "CodeGPT.apiKey": "CodeGPT Plus Beta",
+  "code-runner.executorMap": {
+    "typescript": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName ",
+    "ts": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName",
+    "javascript": "node",
+  },
+  "conventionalCommits.scopes": [
+    "backup and restore gitrepo",
+    "backup repos"
+  ]
+}

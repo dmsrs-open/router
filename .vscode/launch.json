@@ -1,0 +1,15 @@
+// .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/dev home/test.js", // 调试的入口文件（即编译后的JavaScript文件）
+      "preLaunchTask": "tsc: build - tsconfig.json", // 在调试前运行的任务，通常是编译TS
+      "outFiles": ["${workspaceFolder}/dev home/**/*.js"], // 指定输出的JS文件路径，用于调试时源码映射
+      "sourceMaps": true // 启用源码映射
+    }
+  ]
+}
