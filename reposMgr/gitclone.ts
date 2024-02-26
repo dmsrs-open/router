@@ -1,5 +1,6 @@
 import { exec } from 'child_process';
 import { Repo } from './types';
+import fs from 'node:fs';
 
 // 定义要克隆的仓库地址
 const repositoryUrl = 'https://github.com/user/repo.git';
@@ -10,14 +11,19 @@ const targetDirectory = './my-repo';
 export async function gitClone(repoUrl: string | Repo, targetDir: string): Promise<void> {
     return new Promise((resolve, reject) => {
         if (repoUrl instanceof String) {
-            exec(`git clone ${repoUrl} ${targetDir}`, (error, stdout, stderr) => {
-                if (error) {
-                    reject(new Error(`Failed to execute git clone: ${error.message}\n${stderr}`));
-                } else {
-                    console.log(`Git clone output:\n${stdout}`);
-                    resolve();
-                }
-            });
+            if (fs.existsSync(repoUrl as string)) {
+
+            } else {
+                exec(`git clone ${repoUrl} ${targetDir}`, (error, stdout, stderr) => {
+                    if (error) {
+                        reject(new Error(`Failed to execute git clone: ${error.message}\n${stderr}`));
+                    } else {
+                        console.log(`Git clone output:\n${stdout}`);
+                        resolve();
+                    }
+                });
+            }
+
         } else {
             let repo = repoUrl as Repo
             repo?.remotes.forEach(remote => {

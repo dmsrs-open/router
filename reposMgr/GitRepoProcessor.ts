@@ -6,14 +6,14 @@ import { gitClone } from './gitclone';
 
 export class GitRepoProcessor implements Proccessor {
     name: '.git';
-    shouldRestore(ctx: Context, repo: Repo): boolean {
+    async shouldRestore(ctx: Context, repo: Repo) {
         return repo?.name.endsWith('.git');
     }
 
-    shouldBackup(ctx: Context) {
+    async shouldBackup(ctx: Context) {
         return fs.existsSync(path.join(ctx.curDir, '.git'));
     }
-    backupRepo(ctx: Context) {
+    async backupRepo(ctx: Context) {
         // 定义一个GitRepo对象，用于存储git库的信息
         let repo: Repo = {
             name: 'unknown',
@@ -40,8 +40,8 @@ export class GitRepoProcessor implements Proccessor {
         return repo;
     }
 
-    restoreRepo(ctx, repo) {
-        gitClone(repo, ctx.curDir)
+    async restoreRepo(ctx, repo) {
+        await gitClone(repo, ctx.curDir)
         return false;
     }
 }

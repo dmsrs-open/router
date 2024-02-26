@@ -25,29 +25,29 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
         .then(ctx => console.log('Done! Check the ' + ctx.rootDir + ' file for the results.'))
 }
 
-function restoreRepo(rootDir: string, depth: number, ctx: Context) {
+async function restoreRepo(rootDir: string, depth: number, ctx: Context) {
 
     for (let key in ctx.db.data) {
         let repo = ctx.db.data[key];
         ctx.curDir = path.join(ctx.rootDir, key)
-        factory.forEach((p) => {
-            {
-                // 判断是否存在.git目录
-                let shouldRestore = p.shouldRestore(ctx, repo)
-                // 如果是git库，获取其信息，并添加到数组中
-                if (shouldRestore) {
-                    // 定义一个GitRepo对象，用于存储git库的信息
-                    let result = p.restoreRepo(ctx, repo)
-                    if (!result) {
-                        console.log('Error: ' + ctx.curDir + ' is not a git repository!');
-                    }
-                }
-                // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
-                else {
+        await Promise.all(factory.map(async p => {
 
+            // 判断是否存在.git目录
+            let shouldRestore = p.shouldRestore(ctx, repo)
+            // 如果是git库，获取其信息，并添加到数组中
+            if (shouldRestore) {
+                // 定义一个GitRepo对象，用于存储git库的信息
+                let result = await p.restoreRepo(ctx, repo)
+                if (!result) {
+                    console.log('Error: ' + ctx.curDir + ' is not a git repository!');
                 }
             }
-        },)
+            // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
+            else {
+
+            }
+
+        }))
     }
 }
 

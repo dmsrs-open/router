@@ -6,10 +6,11 @@ export type Repos = {
 };
 export type Proccessor = {
     name: string;
-    shouldBackup(ctx: Context): boolean;
-    backupRepo(ctx: Context): Repo;
-    restoreRepo(ctx: Context, repo: Repo): boolean;
-    shouldRestore(ctx: Context, repo: Repo): boolean;
+    shouldBackup(ctx: Context): Promise<boolean>;
+    backupRepo(ctx: Context): Promise<Repo>;
+
+    shouldRestore(ctx: Context, repo: Repo): Promise<boolean>;
+    restoreRepo(ctx: Context, repo: Repo): Promise<boolean>;
 }
 export type Factory = Set<Proccessor>;
 export type Context = {
