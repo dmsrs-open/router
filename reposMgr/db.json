@@ -664,5 +664,17 @@
     "remotes": [
       "https://github.com/frontendniubility/vscode-npm-scripts.git"
     ]
+  },
+  "\\code-ai\\ReactComputerVisionTemplate": {
+    "name": "ReactComputerVisionTemplate.git",
+    "remotes": [
+      "https://github.com/ainiubility/ReactComputerVisionTemplate.git"
+    ]
+  },
+  "\\code-ai\\time-series-forecasting-tensorflowjs": {
+    "name": "time-series-forecasting-tensorflowjs.git",
+    "remotes": [
+      "https://github.com/jinglescode/time-series-forecasting-tensorflowjs.git"
+    ]
   }
 }

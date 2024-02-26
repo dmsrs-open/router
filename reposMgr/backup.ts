@@ -9,13 +9,13 @@ import { factory } from './factory';
 export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
-        .then(db => {
+        .then(async db => {
             const ctx: Context = {
                 curDir: rootDir,
                 db,
                 rootDir: rootDir
             };
-            findRepos(rootDir, maxDepth, ctx);
+            await findRepos(rootDir, maxDepth, ctx);
             return ctx;
         })
         .then(async ctx => {
@@ -26,7 +26,7 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
         .catch(err => console.error(err))
 }
 
-function findRepos(dir: string, depth: number, ctx: Context) {
+async function findRepos(dir: string, depth: number, ctx: Context) {
     if (depth === 0) {
         return;
     }
@@ -38,26 +38,25 @@ function findRepos(dir: string, depth: number, ctx: Context) {
         let curDirPath = path.join(dir, file);
         let key = curDirPath.replace(ctx.rootDir, '')
         ctx.curDir = curDirPath;
-
-        factory.forEach((p) => {
+        for (let p of factory) {
             // 判断是否是目录
             let isDir = fs.existsSync(curDirPath) && fs.statSync(curDirPath)?.isDirectory();
             // 如果是目录，判断是否是git库
             if (isDir) {
                 // 判断是否存在.git目录
-                let isGitRepo = p.shouldBackup(ctx)
+                let isGitRepo = await p.shouldBackup(ctx)
                 // 如果是git库，获取其信息，并添加到数组中
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
-                    let repo = p.backupRepo(ctx)
+                    let repo = await p.backupRepo(ctx)
                     ctx.db.data[key] = extend(ctx.db.data[key], repo);
                 }
                 // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
                 else {
-                    findRepos(curDirPath, depth - 1, ctx)
+                    await findRepos(curDirPath, depth - 1, ctx)
                 }
             }
-        },)
+        }
     }
 }
 

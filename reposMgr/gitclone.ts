@@ -26,7 +26,7 @@ export async function gitClone(repoUrl: string | Repo, targetDir: string): Promi
 
         } else {
             let repo = repoUrl as Repo
-            repo?.remotes.forEach(remote => {
+            repo?.remotes?.forEach(remote => {
 
                 exec(`git clone ${repo.remotes[remote]} ${targetDir}`, (error, stdout, stderr) => {
                     if (error) {
