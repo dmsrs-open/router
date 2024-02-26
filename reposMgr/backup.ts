@@ -6,16 +6,16 @@ import { JSONFilePreset } from 'lowdb/node';
 import { extend } from './utils';
 import { factory } from './factory';
 
-export async function findAndBackupRepos(currentDir: string, maxDepth: number): Promise<void> {
+export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
         .then(db => {
             const ctx: Context = {
-                curDir: currentDir,
+                curDir: rootDir,
                 db,
-                rootDir: currentDir
+                rootDir: rootDir
             };
-            findRepos(currentDir, maxDepth, ctx);
+            findRepos(rootDir, maxDepth, ctx);
             return ctx;
         })
         .then(async ctx => {
@@ -45,7 +45,7 @@ function findRepos(dir: string, depth: number, ctx: Context) {
             // 如果是目录，判断是否是git库
             if (isDir) {
                 // 判断是否存在.git目录
-                let isGitRepo = p.shouldProccess(ctx)
+                let isGitRepo = p.shouldBackup(ctx)
                 // 如果是git库，获取其信息，并添加到数组中
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
@@ -61,9 +61,9 @@ function findRepos(dir: string, depth: number, ctx: Context) {
     }
 }
 
-const CURRENT_DIR = ['C:\\ScriptsApplications', 'G:\\'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\ScriptsApplications', 'G:\\'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {
-    await findAndBackupRepos(CURRENT_DIR, MAX_DEPTH);
+    await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
 })();

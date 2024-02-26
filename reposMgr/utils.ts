@@ -44,7 +44,7 @@ export function getNextCharacter(source: string): string {
 }
 
 // 使用示例
-const currentChar = 'PayPal';
+const currentChar = 'Visual Studio Code';
 let nextChar = getNextCharacter(currentChar);
 
 console.log(nextChar);

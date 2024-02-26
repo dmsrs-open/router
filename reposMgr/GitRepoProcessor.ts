@@ -2,11 +2,15 @@ import fs from "node:fs";
 import path from "path";
 import { Context, Proccessor, Repo } from './types';
 import { removeDuplicates } from "./utils";
-
+import { gitClone } from './gitclone';
 
 export class GitRepoProcessor implements Proccessor {
     name: '.git';
-    shouldProccess(ctx: Context) {
+    shouldRestore(ctx: Context, repo: Repo): boolean {
+        return repo?.name.endsWith('.git');
+    }
+
+    shouldBackup(ctx: Context) {
         return fs.existsSync(path.join(ctx.curDir, '.git'));
     }
     backupRepo(ctx: Context) {
@@ -37,7 +41,7 @@ export class GitRepoProcessor implements Proccessor {
     }
 
     restoreRepo(ctx, repo) {
-
+        gitClone(repo, ctx.curDir)
         return false;
     }
 }

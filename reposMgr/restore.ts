@@ -1,58 +1,50 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Factory, Context, MergeOptions, Repos } from './types'
+import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend } from './utils';
 import { factory } from './factory';
 
-export async function findAndBackupRepos(currentDir: string, maxDepth: number): Promise<void> {
+export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
-    await JSONFilePreset('db.json', defaultData).then(db => {
-        const ctx: Context = {
-            curDir: currentDir,
-            db,
-            rootDir: currentDir
-        };
-        findRepos(currentDir, maxDepth, ctx);
-        return ctx;
-    })
+    await JSONFilePreset('db.json', defaultData)
+        .then(db => {
+            const ctx: Context = {
+                curDir: rootDir,
+                db,
+                rootDir: rootDir
+            };
+
+            return ctx;
+        })
         .then(ctx => {
-            ctx.db.write();
+
             return ctx;
         })
         .then(ctx => console.log('Done! Check the ' + ctx.rootDir + ' file for the results.'))
 }
 
-function findRepos(dir: string, depth: number, ctx: Context) {
-    if (depth === 0) {
-        return;
-    }
-    let files = fs.readdirSync(dir);
+function restoreRepo(rootDir: string, depth: number, ctx: Context) {
 
-    // 遍历所有文件和子目录
-    for (let file of files) {
-        // 拼接完整的路径
-        let curDirPath = path.join(dir, file);
-        let key = curDirPath.replace(ctx.rootDir, '')
-        ctx.curDir = curDirPath;
-
+    for (let key in ctx.db.data) {
+        let repo = ctx.db.data[key];
+        ctx.curDir = path.join(ctx.rootDir, key)
         factory.forEach((p) => {
-            // 判断是否是目录
-            let isDir = fs.existsSync(curDirPath) && fs.statSync(curDirPath)?.isDirectory();
-            // 如果是目录，判断是否是git库
-            if (isDir) {
+            {
                 // 判断是否存在.git目录
-                let isGitRepo = p.shouldProccess(ctx)
+                let shouldRestore = p.shouldRestore(ctx, repo)
                 // 如果是git库，获取其信息，并添加到数组中
-                if (isGitRepo) {
+                if (shouldRestore) {
                     // 定义一个GitRepo对象，用于存储git库的信息
-                    let repo = p.backupRepo(ctx)
-                    ctx.db.data[key] = extend(ctx.db.data[key], repo);
+                    let result = p.restoreRepo(ctx, repo)
+                    if (!result) {
+                        console.log('Error: ' + ctx.curDir + ' is not a git repository!');
+                    }
                 }
                 // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
                 else {
-                    findRepos(curDirPath, depth - 1, ctx)
+
                 }
             }
         },)
