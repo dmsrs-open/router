@@ -1,109 +1,32 @@
 {
-  "\\code\\awesome-aop": {
-    "name": "awesome-aop.git",
+  "\\code-ai\\face-api-demo-vue": {
+    "name": "face-api-demo-vue.git",
     "remotes": [
-      "https://gitee.com/dmsrs/awesome-aop.git"
+      "https://gitee.com/codeshelter/face-api-demo-vue.git"
     ]
   },
-  "\\code\\BingGPT": {
-    "name": "BingGPT.git",
+  "\\code-ai\\ReactComputerVisionTemplate": {
+    "name": "ReactComputerVisionTemplate.git",
     "remotes": [
-      "https://gitee.com/dmsrs/BingGPT.git"
+      "https://github.com/ainiubility/ReactComputerVisionTemplate.git"
     ]
   },
-  "\\code\\Bonobo.Git.Server": {
-    "name": "Bonobo.Git.Server.git",
+  "\\code-ai\\tensorflow-handbook-javascript": {
+    "name": "tensorflow-handbook-javascript.git",
     "remotes": [
-      "http://git.tsharp.org/Bonobo.Git.Server.git"
+      "https://github.com/ainiubility/tensorflow-handbook-javascript.git"
     ]
   },
-  "\\code\\certificate-toolbox": {
-    "name": "certificate-toolbox.git",
+  "\\code-ai\\tfjs_quick_start_course_2020": {
+    "name": "tfjs_quick_start_course_2020.git",
     "remotes": [
-      "git@github.com:niubilities/certificate-toolbox.git"
+      "https://github.com/ainiubility/tfjs_quick_start_course_2020.git"
     ]
   },
-  "\\code\\DbContextScope": {
-    "name": "DbContextScope.git",
+  "\\code-ai\\time-series-forecasting-tensorflowjs": {
+    "name": "time-series-forecasting-tensorflowjs.git",
     "remotes": [
-      "https://github.com/niubilitydotnet/DbContextScope.git",
-      "https://github.com/yegor-mialyk/DbContextScope.git",
-      "https://github.com/Fignum/DbContextScope.git"
-    ]
-  },
-  "\\code\\DisruptiveSoftware.Cryptography.Tools1": {
-    "name": "DisruptiveSoftware.Cryptography.Tools.git",
-    "remotes": [
-      "git@github.com:niubilities/DisruptiveSoftware.Cryptography.Tools.git"
-    ]
-  },
-  "\\code\\dmsrs": {
-    "name": "dmsrs.git",
-    "remotes": [
-      "https://gitee.com/dmsrs/dmsrs.git"
-    ]
-  },
-  "\\code\\DmsrsAwesome": {
-    "name": "DmsrsAwesome.git",
-    "remotes": [
-      "https://gitee.com/dmsrs/DmsrsAwesome.git",
-      "https://github.com/niubilitynetcore/DmsrsAwesome.git"
-    ]
-  },
-  "\\code\\DotNetCorePlugins": {
-    "name": "DotNetCorePlugins.git",
-    "remotes": [
-      "https://gitee.com/code-shelter/DotNetCorePlugins.git"
-    ]
-  },
-  "\\code\\EmitMapper": {
-    "name": "EmitMapper.git",
-    "remotes": [
-      "git@github.com:niubilitynetcore/EmitMapper.git"
-    ]
-  },
-  "\\code\\ETL": {
-    "name": "ETL.git",
-    "remotes": [
-      "https://gitee.com/dmsrs/ETL.git"
-    ]
-  },
-  "\\code\\Ext-EDF-Web-MVC": {
-    "name": "Ext-EDF-Web-MVC.git",
-    "remotes": [
-      "http://code.tsharp.org/Ext-EDF-Web-MVC.git"
-    ]
-  },
-  "\\code\\FastExpressionCompiler": {
-    "name": "FastExpressionCompiler.git",
-    "remotes": [
-      "git@github.com:niubilitynetcore/FastExpressionCompiler.git"
-    ]
-  },
-  "\\code\\git-awesome": {
-    "name": "git-awesome.git",
-    "remotes": [
-      "https://github.com/cnjimbo/git-awesome.git"
-    ]
-  },
-  "\\code\\router": {
-    "name": "router.git",
-    "remotes": [
-      "https://github.com/frontendniubility/router.git",
-      "https://gitee.com/dmsrs/router.git"
-    ]
-  },
-  "\\code\\TSharp": {
-    "name": "TSharp.git",
-    "remotes": [
-      "https://github.com/niubilityappbox/TSharp.git"
-    ]
-  },
-  "\\code\\vba": {
-    "name": "vba.git",
-    "remotes": [
-      "git@github.com:niubilities/vba.git",
-      "https://github.com/niubilities/vba.git"
+      "https://github.com/jinglescode/time-series-forecasting-tensorflowjs.git"
     ]
   },
   "\\code-front\\best-resume-ever": {
@@ -665,34 +588,111 @@
       "https://github.com/frontendniubility/vscode-npm-scripts.git"
     ]
   },
-  "\\code-ai\\ReactComputerVisionTemplate": {
-    "name": "ReactComputerVisionTemplate.git",
+  "\\code\\awesome-aop": {
+    "name": "awesome-aop.git",
     "remotes": [
-      "https://github.com/ainiubility/ReactComputerVisionTemplate.git"
+      "https://gitee.com/dmsrs/awesome-aop.git"
     ]
   },
-  "\\code-ai\\time-series-forecasting-tensorflowjs": {
-    "name": "time-series-forecasting-tensorflowjs.git",
+  "\\code\\BingGPT": {
+    "name": "BingGPT.git",
     "remotes": [
-      "https://github.com/jinglescode/time-series-forecasting-tensorflowjs.git"
+      "https://gitee.com/dmsrs/BingGPT.git"
     ]
   },
-  "\\code-ai\\face-api-demo-vue": {
-    "name": "face-api-demo-vue.git",
+  "\\code\\Bonobo.Git.Server": {
+    "name": "Bonobo.Git.Server.git",
     "remotes": [
-      "https://gitee.com/codeshelter/face-api-demo-vue.git"
+      "http://git.tsharp.org/Bonobo.Git.Server.git"
     ]
   },
-  "\\code-ai\\tensorflow-handbook-javascript": {
-    "name": "tensorflow-handbook-javascript.git",
+  "\\code\\certificate-toolbox": {
+    "name": "certificate-toolbox.git",
     "remotes": [
-      "https://github.com/ainiubility/tensorflow-handbook-javascript.git"
+      "git@github.com:niubilities/certificate-toolbox.git"
     ]
   },
-  "\\code-ai\\tfjs_quick_start_course_2020": {
-    "name": "tfjs_quick_start_course_2020.git",
+  "\\code\\DbContextScope": {
+    "name": "DbContextScope.git",
     "remotes": [
-      "https://github.com/ainiubility/tfjs_quick_start_course_2020.git"
+      "https://github.com/niubilitydotnet/DbContextScope.git",
+      "https://github.com/yegor-mialyk/DbContextScope.git",
+      "https://github.com/Fignum/DbContextScope.git"
+    ]
+  },
+  "\\code\\DisruptiveSoftware.Cryptography.Tools1": {
+    "name": "DisruptiveSoftware.Cryptography.Tools.git",
+    "remotes": [
+      "git@github.com:niubilities/DisruptiveSoftware.Cryptography.Tools.git"
+    ]
+  },
+  "\\code\\dmsrs": {
+    "name": "dmsrs.git",
+    "remotes": [
+      "https://gitee.com/dmsrs/dmsrs.git"
+    ]
+  },
+  "\\code\\DmsrsAwesome": {
+    "name": "DmsrsAwesome.git",
+    "remotes": [
+      "https://gitee.com/dmsrs/DmsrsAwesome.git",
+      "https://github.com/niubilitynetcore/DmsrsAwesome.git"
+    ]
+  },
+  "\\code\\DotNetCorePlugins": {
+    "name": "DotNetCorePlugins.git",
+    "remotes": [
+      "https://gitee.com/code-shelter/DotNetCorePlugins.git"
+    ]
+  },
+  "\\code\\EmitMapper": {
+    "name": "EmitMapper.git",
+    "remotes": [
+      "git@github.com:niubilitynetcore/EmitMapper.git"
+    ]
+  },
+  "\\code\\ETL": {
+    "name": "ETL.git",
+    "remotes": [
+      "https://gitee.com/dmsrs/ETL.git"
+    ]
+  },
+  "\\code\\Ext-EDF-Web-MVC": {
+    "name": "Ext-EDF-Web-MVC.git",
+    "remotes": [
+      "http://code.tsharp.org/Ext-EDF-Web-MVC.git"
+    ]
+  },
+  "\\code\\FastExpressionCompiler": {
+    "name": "FastExpressionCompiler.git",
+    "remotes": [
+      "git@github.com:niubilitynetcore/FastExpressionCompiler.git"
+    ]
+  },
+  "\\code\\git-awesome": {
+    "name": "git-awesome.git",
+    "remotes": [
+      "https://github.com/cnjimbo/git-awesome.git"
+    ]
+  },
+  "\\code\\router": {
+    "name": "router.git",
+    "remotes": [
+      "https://github.com/frontendniubility/router.git",
+      "https://gitee.com/dmsrs/router.git"
+    ]
+  },
+  "\\code\\TSharp": {
+    "name": "TSharp.git",
+    "remotes": [
+      "https://github.com/niubilityappbox/TSharp.git"
+    ]
+  },
+  "\\code\\vba": {
+    "name": "vba.git",
+    "remotes": [
+      "git@github.com:niubilities/vba.git",
+      "https://github.com/niubilities/vba.git"
     ]
   }
 }
