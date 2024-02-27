@@ -676,5 +676,23 @@
     "remotes": [
       "https://github.com/jinglescode/time-series-forecasting-tensorflowjs.git"
     ]
+  },
+  "\\code-ai\\face-api-demo-vue": {
+    "name": "face-api-demo-vue.git",
+    "remotes": [
+      "https://gitee.com/codeshelter/face-api-demo-vue.git"
+    ]
+  },
+  "\\code-ai\\tensorflow-handbook-javascript": {
+    "name": "tensorflow-handbook-javascript.git",
+    "remotes": [
+      "https://github.com/ainiubility/tensorflow-handbook-javascript.git"
+    ]
+  },
+  "\\code-ai\\tfjs_quick_start_course_2020": {
+    "name": "tfjs_quick_start_course_2020.git",
+    "remotes": [
+      "https://github.com/ainiubility/tfjs_quick_start_course_2020.git"
+    ]
   }
 }
