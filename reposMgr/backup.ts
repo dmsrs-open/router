@@ -3,27 +3,19 @@ import fs from 'node:fs';
 import path from 'path';
 import { Factory, Context, MergeOptions, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
+import { Low } from 'lowdb';
 import { extend } from './utils';
 import { factory } from './factory';
 
-export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
-    let defaultData: Repos = {};
-    await JSONFilePreset('db.json', defaultData)
-        .then(async db => {
-            const ctx: Context = {
-                curDir: rootDir,
-                db,
-                rootDir: rootDir
-            };
-            await findRepos(rootDir, maxDepth, ctx);
-            return ctx;
-        })
-        .then(async ctx => {
-            await ctx.db.write()
-            return ctx;
-        })
-        .then(ctx => console.log('Done! Check the ' + ctx.rootDir + ' file for the results.'))
-        .catch(err => console.error(err))
+export async function upgradeConfig(db: Low<Repos>) {
+    if (!Object.hasOwn(db.data, '__version')) {
+        db.data['__version'] = '1.0.0'
+        for (let key in db.data) {
+            delete db.data[key]['remotes']
+        }
+    } else {
+
+    }
 }
 
 async function findRepos(dir: string, depth: number, ctx: Context) {
@@ -58,6 +50,27 @@ async function findRepos(dir: string, depth: number, ctx: Context) {
             }
         }
     }
+}
+
+export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
+    let defaultData: Repos = {};
+    await JSONFilePreset('db.json', defaultData)
+        .then(async db => {
+            await upgradeConfig(db);
+            const ctx: Context = {
+                curDir: rootDir,
+                db,
+                rootDir: rootDir
+            };
+            await findRepos(rootDir, maxDepth, ctx);
+            return ctx;
+        })
+        .then(async ctx => {
+            await ctx.db.write()
+            return ctx;
+        })
+        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDir + ' file for the results.'))
+        .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
 const ROOT_DIR = ['C:\\ScriptsApplications', 'G:\\'].filter(val => fs.existsSync(val))[0];

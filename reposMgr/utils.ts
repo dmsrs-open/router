@@ -2,8 +2,10 @@
 export function extend<T, U>(target: T, source: U, options?: { deep?: boolean }): T & U {
     const isDeep = options?.deep ?? false;
     target = target || {} as T;
+    source = source || {} as U;
     for (const key in source) {
-        if (source.hasOwnProperty(key)) {
+        if (Object.hasOwn(source as object, key)) {
+            // if (Object.hasOwnProperty.call(source, key)) {
             const srcVal = source[key];
             const tarVal = (target as any)[key];
 
@@ -44,15 +46,39 @@ export function getNextCharacter(source: string): string {
 }
 
 // 使用示例
-const currentChar = 'Visual Studio Code';
-let nextChar = getNextCharacter(currentChar);
+// test();
+function test() {
+    const currentChar = 'Visual Studio Code';
+    let nextChar = getNextCharacter(currentChar);
 
-console.log(nextChar);
-let m;
-nextChar = getNextCharacter(m);
+    console.log(nextChar);
+    let m;
+    nextChar = getNextCharacter(m);
 
-console.log(nextChar);
-m = null
-nextChar = getNextCharacter(m);
+    console.log(nextChar);
+    m = null;
+    nextChar = getNextCharacter(m);
 
-console.log(nextChar);
+    console.log(nextChar);
+}
+
+export function extractQuotedValue(str: string): string | undefined {
+    // 匹配单引号或双引号包裹的内容，包括引号本身
+    const regexSingleQuote = /'(.*)'/;
+    const regexDoubleQuote = /"(.*)"/;
+
+    // 先尝试匹配双引号
+    const doubleQuoteMatch = str.match(regexDoubleQuote);
+    if (doubleQuoteMatch && doubleQuoteMatch.length > 1) {
+        return doubleQuoteMatch[1];
+    }
+
+    // 如果没找到双引号，则尝试匹配单引号
+    const singleQuoteMatch = str.match(regexSingleQuote);
+    if (singleQuoteMatch && singleQuoteMatch.length > 1) {
+        return singleQuoteMatch[1];
+    }
+
+    // 如果都没有找到匹配项，返回undefined
+    return undefined;
+}

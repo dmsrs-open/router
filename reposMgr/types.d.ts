@@ -3,7 +3,7 @@ import { Low } from 'lowdb';
 
 export type Repos = {
     [dir: string]: Repo;
-};
+} & { "__version"?: string; };
 export type Proccessor = {
     name: string;
     shouldBackup(ctx: Context): Promise<boolean>;

@@ -1,8 +1,11 @@
-import fs from "node:fs";
+import fs, { PathLike } from "node:fs";
 import path from "path";
+import * as ini from 'ini'; // 需要先安装ini库，命令：npm install ini
 import { Context, Proccessor, Repo } from './types';
-import { removeDuplicates } from "./utils";
+import { removeDuplicates, extend } from "./utils";
 import { gitClone } from './gitclone';
+import { extractQuotedValue } from "./utils";
+import { stringify } from "node:querystring";
 
 export class GitRepoProcessor implements Proccessor {
     name: '.git';
@@ -20,23 +23,9 @@ export class GitRepoProcessor implements Proccessor {
             remotes: [], // git库的所有远程地址
         };
 
-        // 读取.git/config文件，获取所有远程地址
-        let config = fs.readFileSync(path.join(ctx.curDir, '.git', 'config'), 'utf-8');
+        let configPath = path.join(ctx.curDir, '.git', 'config')
 
-        // 使用正则表达式，匹配所有的url字段
-        let regex = /url = (.*)/g;
-
-        // 定义一个变量，用于存储匹配结果
-        let match;
-
-        // 循环匹配，直到没有更多结果
-        while ((match = regex.exec(config)) !== null) {
-            // 获取匹配到的url，去除两端的空格，并添加到remotes数组中
-            let url = match[1].trim();
-            repo.name = url?.split('/')?.pop();
-            repo.remotes.push(url);
-        }
-        repo.remotes = removeDuplicates(repo.remotes);
+        repo = readGitConfig(configPath)
         return repo;
     }
 
@@ -45,3 +34,41 @@ export class GitRepoProcessor implements Proccessor {
         return false;
     }
 }
+//C:\ScriptsApplications\code-front\vite-templates\.git
+
+const gitConfigPath = path.join(`C:/ScriptsApplications/code-front/vite-templates`, `.git`, 'config');
+function readGitConfig(configPath: PathLike) {
+
+    try {
+        // 读取.git/config文件
+        const configContent = fs.readFileSync(configPath, 'utf-8');
+        // 解析ini内容为对象
+        const gitConfig = ini.parse(configContent);
+        let prefixes = ['remote', 'branch', 'submodule']
+        for (let key in gitConfig) {
+            prefixes.forEach((prefix, idx) => {
+                if (key.startsWith(prefix)) {
+                    let subKey = extractQuotedValue(key);
+                    if (!gitConfig[prefix])
+                        gitConfig[prefix] = {}
+                    if (!gitConfig[prefix][subKey]) {
+                        gitConfig[prefix][subKey] = {}
+                    }
+                    gitConfig[prefix][subKey] = extend(gitConfig[prefix][subKey], gitConfig[key])
+
+                    delete gitConfig[key];
+                }
+            })
+        }
+        return gitConfig;
+    } catch (error) {
+        console.error(`Error reading or parsing .git/config file: ${error.message}`);
+        return {
+            name: 'unknown',
+            desc: `error:${JSON.stringify(error)}`
+            //remotes: [], // git库的所有远程地址
+        }
+    }
+}
+// readGitConfig(gitConfigPath)
+
