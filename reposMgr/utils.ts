@@ -2,8 +2,6 @@ import { Low } from "lowdb";
 import semver from "semver";
 import { Repos } from "./types";
 
-
-// utils.ts
 // utils.ts
 export function extend<T extends object, U extends object>(target: T, ...sources: Array<object | U>): T & U {
     const isDeep = true;
@@ -130,6 +128,6 @@ function test_getNextCharacter() {
     console.log(nextChar);
 }
 
-// test_extend()
+//  test_extend()
 // 使用示例
 // test();

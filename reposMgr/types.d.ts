@@ -35,6 +35,7 @@ export type Submodule = {
 };
 export type Repo = {
     name: string;
+    __processorName?: string;
     desc?: string; // optional description of the repository
     remote?: {
         origin?: Remote;

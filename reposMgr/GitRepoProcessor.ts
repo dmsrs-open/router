@@ -7,7 +7,7 @@ import { gitClone } from './gitclone';
 import { extractQuotedValue } from "./utils";
 
 export class GitRepoProcessor implements Proccessor {
-    name: '.git';
+    readonly name: string = '.git';
     async shouldRestore(ctx: Context, repo: Repo) {
         return repo?.name.endsWith('.git');
     }
@@ -33,6 +33,7 @@ export class GitRepoProcessor implements Proccessor {
     }
 }
 //C:\ScriptsApplications\code-front\vite-templates\.git
+
 
 const gitConfigPath = path.join(`C:/ScriptsApplications/code-front/vite-templates`, `.git`, 'config');
 function readGitConfig(configPath: PathLike) {
