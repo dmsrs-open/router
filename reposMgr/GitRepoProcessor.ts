@@ -5,7 +5,6 @@ import { Context, Proccessor, Repo } from './types';
 import { removeDuplicates, extend } from "./utils";
 import { gitClone } from './gitclone';
 import { extractQuotedValue } from "./utils";
-import { stringify } from "node:querystring";
 
 export class GitRepoProcessor implements Proccessor {
     name: '.git';
@@ -19,8 +18,7 @@ export class GitRepoProcessor implements Proccessor {
     async backupRepo(ctx: Context) {
         // 定义一个GitRepo对象，用于存储git库的信息
         let repo: Repo = {
-            name: 'unknown',
-            remotes: [], // git库的所有远程地址
+            name: 'unknown'
         };
 
         let configPath = path.join(ctx.curDir, '.git', 'config')
@@ -43,7 +41,7 @@ function readGitConfig(configPath: PathLike) {
         // 读取.git/config文件
         const configContent = fs.readFileSync(configPath, 'utf-8');
         // 解析ini内容为对象
-        const gitConfig = ini.parse(configContent);
+        const gitConfig: Repo = ini.parse(configContent);
         let prefixes = ['remote', 'branch', 'submodule']
         for (let key in gitConfig) {
             prefixes.forEach((prefix, idx) => {
@@ -60,6 +58,16 @@ function readGitConfig(configPath: PathLike) {
                 }
             })
         }
+        gitConfig.name = (
+            gitConfig.remote?.origin?.url ??
+            gitConfig.remote?.upstream?.url ??
+            Object.values(gitConfig.remote).findLast(v => v.url)?.url ??
+            'unknown'
+        )?.split('/')?.pop();;
+        if (gitConfig.name == 'unkown') {
+            console.log(gitConfig)
+        }
+
         return gitConfig;
     } catch (error) {
         console.error(`Error reading or parsing .git/config file: ${error.message}`);

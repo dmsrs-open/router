@@ -332,7 +332,7 @@
     }
   },
   "\\code-front\\vite-templates": {
-    "name": "vue3_vite_ts.git",
+    "name": "vite-templates.git",
     "core": {
       "repositoryformatversion": "0",
       "filemode": false,
@@ -393,7 +393,7 @@
     }
   },
   "\\code-front\\vite-userscript-plugin": {
-    "name": "vite-userscript-template",
+    "name": "vite-userscript-plugin.git",
     "core": {
       "repositoryformatversion": "0",
       "filemode": false,
@@ -1306,7 +1306,7 @@
     }
   },
   "\\code-learn\\War3Net": {
-    "name": "JpegLibrary",
+    "name": "War3Net.git",
     "core": {
       "repositoryformatversion": "0",
       "filemode": false,
@@ -1551,7 +1551,7 @@
     }
   },
   "\\code-vPress\\blog-theme": {
-    "name": "blog.git",
+    "name": "blog-theme.git",
     "core": {
       "repositoryformatversion": "0",
       "filemode": false,
@@ -1601,7 +1601,7 @@
     }
   },
   "\\code-vPress\\cnjimbo.github.io": {
-    "name": "sugar-blog.git",
+    "name": "cnjimbo.github.io.git",
     "core": {
       "repositoryformatversion": "0",
       "filemode": false,
@@ -1862,7 +1862,8 @@
       "logallrefupdates": true,
       "symlinks": false,
       "ignorecase": true
-    }
+    },
+    "desc": "error:{}"
   },
   "\\code-vPress\\vite-plugin-vitepress-auto-sidebar": {
     "name": "vite-plugin-vitepress-auto-sidebar.git",
@@ -2873,5 +2874,39 @@
       }
     }
   },
-  "__version": "1.0.0"
+  "__version": {
+    "options": {},
+    "loose": false,
+    "includePrerelease": false,
+    "raw": "1.0.0",
+    "major": 1,
+    "minor": 0,
+    "patch": 0,
+    "prerelease": [],
+    "build": [],
+    "version": "1.0.0"
+  },
+  "\\code\\my-repo": {
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/cnjimbo/vite-templates.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "vite-templates.git"
+  }
 }

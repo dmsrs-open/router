@@ -3,20 +3,9 @@ import fs from 'node:fs';
 import path from 'path';
 import { Factory, Context, MergeOptions, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { Low } from 'lowdb';
 import { extend } from './utils';
 import { factory } from './factory';
-
-export async function upgradeConfig(db: Low<Repos>) {
-    if (!Object.hasOwn(db.data, '__version')) {
-        db.data['__version'] = '1.0.0'
-        for (let key in db.data) {
-            delete db.data[key]['remotes']
-        }
-    } else {
-
-    }
-}
+import { upgradeConfig } from './utils';
 
 async function findRepos(dir: string, depth: number, ctx: Context) {
     if (depth === 0) {
@@ -41,7 +30,11 @@ async function findRepos(dir: string, depth: number, ctx: Context) {
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
                     let repo = await p.backupRepo(ctx)
-                    ctx.db.data[key] = extend(ctx.db.data[key], repo);
+                    console.log(p)
+                    ctx.db.data[key] = extend({ "__processor": p.name }, ctx.db.data[key], repo);
+
+                    //仅能有一个处理器处理当前库
+                    break;
                 }
                 // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
                 else {

@@ -14,7 +14,7 @@
   },
   "allowTsInNodeModules": true,
   "include": ["**/*.*"], // 指定要编译的源文件目录
-  "excude": ["node_modules/**/*"],
+  "exclude": ["node_modules", "build", "ai", "dist", "**/*.spec.ts"],
   "ts-node": {
     "allowTsInNodeModules": true
   }

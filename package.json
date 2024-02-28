@@ -10,7 +10,8 @@
     "@tensorflow/tfjs": "^4.17.0",
     "@tensorflow/tfjs-node-gpu": "^4.17.0",
     "csv-parser": "^3.0.0",
-    "lowdb": "^7.0.1"
+    "lowdb": "^7.0.1",
+    "semver": "^7.6.0"
   },
   "engines": {
     "node": ">=20.0.0",

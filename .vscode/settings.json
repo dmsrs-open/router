@@ -20,5 +20,13 @@
   "conventionalCommits.scopes": [
     "backup and restore gitrepo",
     "backup repos"
-  ]
+  ],
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.showExecutionMessage": true,
+  "code-runner.languageIdToFileExtensionMap": {
+
+    "bat": ".bat",
+    "powershell": ".ps1",
+    "typescript": ".ts"
+  }
 }
