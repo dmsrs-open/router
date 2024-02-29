@@ -1,5 +1,9 @@
 {
   "type": "module",
+  "scripts": {
+    "backup": "node --es-module-specifier-resolution=node --loader ts-node/esm ./reposMgr/backup.ts",
+    "restore": "node --es-module-specifier-resolution=node --loader ts-node/esm ./reposMgr/restore.ts"
+  },
   "devDependencies": {
     "@types/node": "^20.11.19",
     "ini": "^4.1.1",

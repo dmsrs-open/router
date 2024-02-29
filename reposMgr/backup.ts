@@ -1,11 +1,10 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Factory, Context, MergeOptions, Repos } from './types'
+import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { extend } from './utils';
 import { factory } from './factory';
-import { upgradeConfig } from './utils';
+import { upgradeConfig, extend } from './utils';
 
 
 async function findRepos(dir: string, depth: number, ctx: Context): Promise<void> {

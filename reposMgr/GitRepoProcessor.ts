@@ -36,48 +36,47 @@ export class GitRepoProcessor implements Proccessor {
 
 
 const gitConfigPath = path.join(`C:/ScriptsApplications/code-front/vite-templates`, `.git`, 'config');
+
 function readGitConfig(configPath: PathLike) {
-
+    // 读取.git/config文件
+    let configContent = ''
+    let gitConfig: Repo = null
+    const prefixes = ['remote', 'branch', 'submodule']
     try {
-        // 读取.git/config文件
-        const configContent = fs.readFileSync(configPath, 'utf-8');
+        configContent = fs.readFileSync(configPath, 'utf-8');
         // 解析ini内容为对象
-        const gitConfig: Repo = ini.parse(configContent);
-        let prefixes = ['remote', 'branch', 'submodule']
-        for (let key in gitConfig) {
-            prefixes.forEach((prefix, idx) => {
-                if (key.startsWith(prefix)) {
-                    let subKey = extractQuotedValue(key);
-                    if (!gitConfig[prefix])
+        gitConfig = ini.parse(configContent);
+        Object.keys(gitConfig).map((key) => {
+            let prefix = prefixes.find(prefix => key.startsWith(prefix))
+            if (prefix) {
+                let subKey = extractQuotedValue(key);
+                if (subKey) {
+                    if (!gitConfig[prefix]) {
                         gitConfig[prefix] = {}
-                    if (!gitConfig[prefix][subKey]) {
-                        gitConfig[prefix][subKey] = {}
                     }
-                    gitConfig[prefix][subKey] = extend(gitConfig[prefix][subKey], gitConfig[key])
-
+                    gitConfig[prefix][subKey] = extend({}, gitConfig[prefix][subKey], gitConfig[key])
                     delete gitConfig[key];
                 }
-            })
-        }
+            }
+        })
         gitConfig.name = (
-            gitConfig.remote?.origin?.url ??
-            gitConfig.remote?.upstream?.url ??
-            Object.values(gitConfig.remote).findLast(v => v.url)?.url ??
-            'unknown'
-        )?.split('/')?.pop();;
-        if (gitConfig.name == 'unkown') {
+            gitConfig.remote?.origin?.url ||
+            gitConfig.remote?.upstream?.url ||
+            (gitConfig.remote ? Object.values(gitConfig.remote).findLast(v => v.url)?.url : '/unknown')
+        )?.split('/')?.pop();
+        if (gitConfig.name == 'unknown') {
             console.log(gitConfig)
         }
 
         return gitConfig;
-    } catch (error) {
-        console.error(`Error reading or parsing .git/config file: ${error.message}`);
+    } catch (err) {
+        console.error('error on reading:', configPath, 'content:', configContent, 'error:', err.message, ',', err.stack)
         return {
             name: 'unknown',
-            desc: `error:${JSON.stringify(error)}`
-            //remotes: [], // git库的所有远程地址
+            desc: `error:${err.message}.${err.stack}. file:${configPath}. content:${configContent}. gitConfig: ${JSON.stringify(gitConfig)}`
         }
     }
+
 }
 // readGitConfig(gitConfigPath)
 

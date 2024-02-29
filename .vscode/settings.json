@@ -15,7 +15,7 @@
   "code-runner.executorMap": {
     "typescript": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName",
     "ts": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName",
-    "javascript": "node",
+    "javascript": "node  --es-module-specifier-resolution=node  $fullFileName",
   },
   "conventionalCommits.scopes": [
     "backup and restore gitrepo",
