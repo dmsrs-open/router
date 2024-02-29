@@ -1,22 +1,50 @@
-import { exec } from 'child_process';
+import { exec, execSync } from 'child_process';
 import { Repo } from './types';
 
 // 创建一个异步函数来执行git clone命令
-export async function gitClone(repo: Repo, targetDir: string): Promise<void> {
-    return new Promise((resolve, reject) => {
-        Object.entries(repo.remote).map(([name, remote]) => {
+export function gitClone(repo: Repo, targetDir: string) {
 
-            exec(`git clone ${remote.url} ${targetDir}`, (error, stdout, stderr) => {
-                if (error) {
-                    reject(new Error(`Failed to execute git clone: ${error.message}\n${stderr}`));
-                } else {
-                    console.log(`Git clone output:\n${stdout}`);
-                    resolve();
-                }
-            });
-        });
-    })
+    Object.entries(repo.remote)
+        .map(([name, remoteConfig]) => {
+            return cloneOrAddRemote(targetDir, name, remoteConfig.url)
+        })
 }
+
+function executeCommand(command: string) {
+    return execSync(command, { encoding: 'utf-8' }).trim();
+}
+
+function repositoryExistsAtPath(repoPath: string): boolean {
+    try {
+        executeCommand(`cd ${repoPath} && git rev-parse --git-dir`);
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
+
+function addRemoteIfNotExists(repoPath: string, remoteName: string, remoteUrl: string) {
+    const existingRemotes = executeCommand(`cd ${repoPath} && git remote -v`).split('\n');
+
+    if (!existingRemotes.some(remote => remote.includes(`${remoteName} ${remoteUrl}`))) {
+        return executeCommand(`cd ${repoPath} && git remote add ${remoteName} ${remoteUrl}`);
+
+    } else {
+        console.log(`Remote ${remoteName} already exists with URL ${remoteUrl}.`);
+    }
+}
+
+function cloneOrAddRemote(repoPath: string, remoteName: string, remoteUrl: string) {
+    if (!repositoryExistsAtPath(repoPath)) {
+        console.log('Repository does not exist locally. Cloning...');
+        return executeCommand(`git clone ${remoteUrl} ${repoPath}`);
+
+    } else {
+        console.log(`Repository exists locally. adding remote ${remoteName} = ${remoteUrl}`);
+        return addRemoteIfNotExists(repoPath, remoteName, remoteUrl);
+    }
+}
+
 const targetDirectory = './../../my-repo';
 const repositoryUrl = {
     "name": "vue3_vite_ts.git",
@@ -79,12 +107,13 @@ const repositoryUrl = {
         }
     }
 };
+const REMOTE_REPO_URL = "https://gitee.com/spiketyke/vue3_vite_ts.git";
 
 // 调用函数执行git clone
 function test_clone() {
     gitClone(repositoryUrl, targetDirectory)
-        .then(() => console.log('Clone completed successfully.'))
-        .catch(err => console.error('Error during cloning:', err));
+        // .then(() => console.log('Clone completed successfully.'))
+        // .catch(err => console.error('Error during cloning:', err));
 }
 
 // test_clone()

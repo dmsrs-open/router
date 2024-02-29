@@ -3,36 +3,22 @@ import fs from 'node:fs';
 import path from 'path';
 import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { extend } from './utils';
+import { extend, upgradeConfig } from './utils'
+
 import { factory } from './factory';
-import { upgradeConfig } from './utils';
 
-async function restoreRepo(ctx: Context) {
 
-    Object.entries(ctx.db.data).map(async ([relativePath, repo]) => {
-        console.log("====>", relativePath, repo)
+async function restoreRepo(_ctx: Context) {
+    return Object.entries(_ctx.db.data).map(async ([relativePath, repo]) => {
 
         if (relativePath == '__version') return;
-        //console.log("====>", relativePath, repo)
-        await Promise.all(factory.map(async p => {
-            let newnctx = extend(ctx, { rootDir: ctx.rootDir, curDir: path.join(ctx.rootDir, relativePath) });
-            let shouldRestore = p.shouldRestore(newnctx, repo)
-            // 如果是git库，获取其信息，并添加到数组中
-            if (shouldRestore) {
-                // 定义一个GitRepo对象，用于存储git库的信息
-                let result = await p.restoreRepo(newnctx, repo)
-                if (!result) {
-                    console.log('Error: ' + newnctx.curDir + ' is not a git repository!');
-                }
-            }
-            // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
-            else {
-
-            }
-
-        }))
+        let ctx = extend({}, _ctx, { rootDir: _ctx.rootDir, curDir: path.join(_ctx.rootDir, relativePath) });
+        let p = factory.find(async p => await p.shouldRestore(ctx, repo));
+        if (p) {
+            // 定义一个GitRepo对象，用于存储git库的信息
+            return await p.restoreRepo(ctx, repo)
+        }
     })
-
 
 }
 export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {

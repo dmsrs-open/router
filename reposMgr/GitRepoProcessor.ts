@@ -9,7 +9,7 @@ import { extractQuotedValue } from "./utils";
 export class GitRepoProcessor implements Proccessor {
     readonly name: string = '.git';
     async shouldRestore(ctx: Context, repo: Repo) {
-        return repo?.name.endsWith('.git');
+        return repo?.__processorName === this.name;
     }
 
     async shouldBackup(ctx: Context) {
@@ -28,7 +28,7 @@ export class GitRepoProcessor implements Proccessor {
     }
 
     async restoreRepo(ctx, repo) {
-        await gitClone(repo, ctx.curDir)
+        gitClone(repo, ctx.curDir)
         return false;
     }
 }

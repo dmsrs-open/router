@@ -3,12 +3,13 @@ import semver from "semver";
 import { Repos } from "./types";
 
 // utils.ts
-export function extend<T extends object, U extends object>(target: T, ...sources: Array<object | U>): T & U {
+export function extend<T extends object, U, U2, U3, U4 extends object>(target, s1: U, s2?: U2, s3?: U3, s4?: U4, ...others: any): T & U & U2 & U3 & U4 {
     const isDeep = true;
-    target = Object.assign({}, target) as T;
+    target = Object.assign({}, target);
+    const sources = [s1, s2, s3, s4, ...others];
     for (const source of sources) {
-        for (const key in source) {
-            if (Object.hasOwn(source, key)) {
+        for (const key in source as any) {
+            if (Object.hasOwn(source as any, key)) {
                 const srcVal = source[key];
                 const tarVal = target[key];
 
@@ -22,7 +23,7 @@ export function extend<T extends object, U extends object>(target: T, ...sources
         }
     }
 
-    return target as T & U;
+    return target;
 }
 
 
