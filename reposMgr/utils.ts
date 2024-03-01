@@ -52,12 +52,14 @@ export function getNextCharacter(source: string): string {
     return nextChar.join('');
 }
 
-
+// const test = "[branch \"net8.0\"]"
+// // todo: test need delete
+// console.log(extractQuotedValue(test))
 
 export function extractQuotedValue(str: string): string | undefined {
     // 匹配单引号或双引号包裹的内容，包括引号本身
-    const regexSingleQuote = /'(.*)'/;
-    const regexDoubleQuote = /"(.*)"/;
+    const regexSingleQuote = /"((?:\\.|[^"])*)"/;
+    const regexDoubleQuote = /"((?:\\.|[^"])*)"/;
 
     // 先尝试匹配双引号
     const doubleQuoteMatch = str.match(regexDoubleQuote);

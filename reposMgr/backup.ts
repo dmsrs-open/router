@@ -48,6 +48,8 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
         .then(async db => {
+            console.log(' ', '', '', '',)
+            console.log('Starting: ')
             await upgradeConfig(db);
             const ctx: Context = {
                 curDir: rootDir,

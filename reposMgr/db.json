@@ -3098,7 +3098,10 @@
         "merge": "refs/heads/master"
       }
     },
-    "name": "awesome-aop.git"
+    "name": "awesome-aop.git",
+    "submodule": {
+      "active": "."
+    }
   },
   "code\\BingGPT": {
     "__processorName": ".git",
@@ -3157,7 +3160,10 @@
         "merge": "refs/heads/develop"
       }
     },
-    "name": "dmsrs.git"
+    "name": "dmsrs.git",
+    "submodule": {
+      "active": "."
+    }
   },
   "code\\DmsrsAwesome": {
     "__processorName": ".git",
@@ -3181,7 +3187,10 @@
         "merge": "refs/heads/main"
       }
     },
-    "name": "DmsrsAwesome.git"
+    "name": "DmsrsAwesome.git",
+    "submodule": {
+      "active": "."
+    }
   },
   "code\\dockpanelsuite": {
     "__processorName": ".git",
@@ -3287,6 +3296,10 @@
           "remote": "origin",
           "merge": "refs/heads/net8.0"
         }
+      },
+      "net8$dot$0": {
+        "remote": "origin",
+        "merge": "refs/heads/net8.0"
       }
     },
     "name": "EmitMapper.git"
@@ -3312,7 +3325,10 @@
         "merge": "refs/heads/main"
       }
     },
-    "name": "git-gears-cs.git"
+    "name": "git-gears-cs.git",
+    "submodule": {
+      "active": "."
+    }
   },
   "code\\GM_config": {
     "__processorName": ".git",
@@ -3358,7 +3374,10 @@
         "merge": "refs/heads/master"
       }
     },
-    "name": "graphql-client.git"
+    "name": "graphql-client.git",
+    "submodule": {
+      "active": "."
+    }
   },
   "code\\isotope": {
     "__processorName": ".git",
@@ -3449,9 +3468,30 @@
       "feature/restore_repos": {
         "remote": "origin",
         "merge": "refs/heads/feature/restore_repos"
+      },
+      "develop": {
+        "remote": "origin",
+        "merge": "refs/heads/develop"
       }
     },
-    "name": "router.git"
+    "name": "router.git",
+    "gitflow": {
+      "branch": {
+        "master": "main",
+        "develop": "develop"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "bugfix": "bugfix/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "support": "support/",
+        "versiontag": ""
+      },
+      "path": {
+        "hooks": "G:/code/router/.git/hooks"
+      }
+    }
   },
   "code\\TargetFrameworkMigrator": {
     "__processorName": ".git",
@@ -3687,7 +3727,10 @@
         "merge": "refs/heads/main"
       }
     },
-    "name": "command-line-api.git"
+    "name": "command-line-api.git",
+    "submodule": {
+      "active": "."
+    }
   },
   "code_learn\\Furion": {
     "__processorName": ".git",
@@ -4600,5 +4643,51 @@
       }
     },
     "name": "vscode-run-scripts-configurations.git"
+  },
+  "code-ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git"
+  },
+  "code-ai\\keract": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/keract.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "keract.git"
   }
 }

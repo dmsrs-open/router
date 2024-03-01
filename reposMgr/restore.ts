@@ -12,6 +12,7 @@ async function restoreRepo(_ctx: Context) {
     return Object.entries(_ctx.db.data).map(async ([relativePath, repo]) => {
 
         if (relativePath == '__version') return;
+
         let ctx = extend({}, _ctx, { rootDir: _ctx.rootDir, curDir: path.join(_ctx.rootDir, relativePath) });
         let p = factory.find(async p => await p.shouldRestore(ctx, repo));
         if (p) {
@@ -28,12 +29,17 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
             const ctx: Context = {
                 curDir: rootDir,
                 db,
-                rootDir: rootDir
+                rootDir
             };
+            console.log(typeof rootDir)
+            console.log(rootDir)
+            console.log(' ', '', '', '',)
+            console.log('Starting: ')
             await upgradeConfig(db)
             return ctx;
         })
         .then(async ctx => {
+
             await restoreRepo(ctx)
             return ctx;
         })
@@ -45,5 +51,7 @@ const CURRENT_DIR = ['C:\\ScriptsApplications\\test', 'G:\\test'].filter(val => 
 const MAX_DEPTH = 5;
 
 (async () => {
+    console.log(typeof CURRENT_DIR)
+    console.log(CURRENT_DIR)
     await findAndBackupRepos(CURRENT_DIR, MAX_DEPTH);
 })();
