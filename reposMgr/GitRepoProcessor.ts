@@ -2,9 +2,7 @@ import fs, { PathLike } from "node:fs";
 import path from "path";
 import * as ini from 'ini'; // 需要先安装ini库，命令：npm install ini
 import { Context, Proccessor, Repo } from './types';
-import { removeDuplicates, extend } from "./utils";
 import { gitClone } from './gitclone';
-import { extractQuotedValue } from "./utils";
 
 export class GitRepoProcessor implements Proccessor {
     readonly name: string = '.git';
@@ -20,7 +18,7 @@ export class GitRepoProcessor implements Proccessor {
         let repo: Repo = {
             name: 'unknown'
         };
-
+        console.log(`Backuping... git配置文件：${ctx.curDir}`)
         let configPath = path.join(ctx.curDir, '.git', 'config')
 
         repo = readGitConfig(configPath)
@@ -32,30 +30,7 @@ export class GitRepoProcessor implements Proccessor {
         return false;
     }
 }
-//C:\ScriptsApplications\code-front\vite-templates\.git
 
-
-const gitConfigPath = path.join(`C:/ScriptsApplications/code-front/vite-templates`, `.git`, 'config');
-const test = `[core]
-	repositoryformatversion = 0
-	filemode = false
-	bare = false
-	logallrefupdates = true
-	ignorecase = true
-[remote "origin"]
-	url = https://github.com/niubilitynetcore/EmitMapper.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
-	pushurl = https://github.com/niubilitynetcore/EmitMapper.git
-[branch "master"]
-	remote = origin
-	merge = refs/heads/master
-[remote "origin2"]
-	url = https://gitee.com/code-shelter/EmitMapper.git
-	fetch = +refs/heads/*:refs/remotes/origin2/*
-[branch "net8.0"]
-	remote = origin
-	merge = refs/heads/net8.0`
-// console.log(fixSectionName(test))
 function fixSectionName(str: string) {
     // ini.parse 会把section中的`.`作为对象层级的分割，所以，把原有.替换为$dot$，然后将空格替换为`.`，则自动解析
     return str.replaceAll(/\[.*?\]/g, function (match) {
@@ -66,14 +41,15 @@ function fixSectionName(str: string) {
         return (match.replaceAll(`"`, ``).replaceAll('.', '$dot$').replace(/[ \t]+/g, '.'))
     });
 }
+
 function readGitConfig(configPath: PathLike) {
     // 读取.git/config文件
     let configContent = ''
     let gitConfig: Repo = null
-    const prefixes = ['remote', 'branch', 'submodule']
+
+    // const prefixes = ['remote', 'branch', 'submodule']
     try {
         configContent = fs.readFileSync(configPath, 'utf-8')
-
         // 解析ini内容为对象
         gitConfig = ini.parse(fixSectionName(configContent)) as any;
         // Object.keys(gitConfig).map((key) => {
@@ -111,5 +87,26 @@ function readGitConfig(configPath: PathLike) {
     }
 
 }
-// readGitConfig(gitConfigPath)
 
+
+const gitConfigPath = path.join(`C:/ScriptsApplications/code-front/vite-templates`, `.git`, 'config');
+const test = `[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+[remote "origin"]
+	url = https://github.com/niubilitynetcore/EmitMapper.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+	pushurl = https://github.com/niubilitynetcore/EmitMapper.git
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+[remote "origin2"]
+	url = https://gitee.com/code-shelter/EmitMapper.git
+	fetch = +refs/heads/*:refs/remotes/origin2/*
+[branch "net8.0"]
+	remote = origin
+	merge = refs/heads/net8.0`
+// console.log(fixSectionName(test))

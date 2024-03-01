@@ -4,9 +4,7 @@ import path from 'path';
 import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend, upgradeConfig } from './utils'
-
 import { factory } from './factory';
-
 
 async function restoreRepo(_ctx: Context) {
     return Object.entries(_ctx.db.data).map(async ([relativePath, repo]) => {
@@ -20,7 +18,6 @@ async function restoreRepo(_ctx: Context) {
             return await p.restoreRepo(ctx, repo)
         }
     })
-
 }
 export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
@@ -31,10 +28,6 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
                 db,
                 rootDir
             };
-            console.log(typeof rootDir)
-            console.log(rootDir)
-            console.log(' ', '', '', '',)
-            console.log('Starting: ')
             await upgradeConfig(db)
             return ctx;
         })
@@ -47,11 +40,17 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
-const CURRENT_DIR = ['C:\\ScriptsApplications\\test', 'G:\\test'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\ScriptsApplications\\test', 'G:\\test'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {
-    console.log(typeof CURRENT_DIR)
-    console.log(CURRENT_DIR)
-    await findAndBackupRepos(CURRENT_DIR, MAX_DEPTH);
+    console.log(``)
+    console.log(``)
+    console.log(' ', '', '', '',)
+    console.log(`Starting: target:${ROOT_DIR}`)
+
+    if (!ROOT_DIR) {
+        console.error('not find target folder, please set it and retry again')
+    }
+    await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
 })();

@@ -48,8 +48,6 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
         .then(async db => {
-            console.log(' ', '', '', '',)
-            console.log('Starting: ')
             await upgradeConfig(db);
             const ctx: Context = {
                 curDir: rootDir,
@@ -71,5 +69,12 @@ const ROOT_DIR = ['C:\\ScriptsApplications', 'G:\\'].filter(val => fs.existsSync
 const MAX_DEPTH = 5;
 
 (async () => {
+    console.log(``)
+    console.log(``)
+    console.log(' ', '', '', '',)
+    console.log(`Starting: target:${ROOT_DIR}`)
+    if (!ROOT_DIR) {
+        console.error('not find target folder, please set it and retry again')
+    }
     await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
 })();
