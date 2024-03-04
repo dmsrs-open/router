@@ -66,6 +66,23 @@
         "remote": "origin",
         "merge": "refs/heads/develop"
       }
+    },
+    "gitflow": {
+      "branch": {
+        "master": "main",
+        "develop": "develop"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "bugfix": "bugfix/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "support": "support/",
+        "versiontag": ""
+      },
+      "path": {
+        "hooks": "C:/ScriptsApplications/code-ai/ReactComputerVisionTemplate/.git/hooks"
+      }
     }
   },
   "\\code-ai\\tensorflow-handbook-javascript": {
@@ -1402,15 +1419,8 @@
       "submodules/JpegLibrary": {
         "url": "https://github.com/Drake53/JpegLibrary"
       },
-      "undefined": {
-        "lua\"": {
-          "url": "https://github.com/Drake53/CSharp.lua"
-        }
-      },
-      "active": "."
-    },
-    "submodule \"submodules/CSharp": {
-      "lua\"": {
+      "active": ".",
+      "submodules/CSharp$dot$lua": {
         "url": "https://github.com/Drake53/CSharp.lua"
       }
     }
@@ -2762,33 +2772,15 @@
         "remote": "origin",
         "merge": "refs/heads/master"
       },
-      "undefined": {
-        "1\"": {
-          "remote": "origin",
-          "merge": "refs/heads/v2.1"
-        },
-        "2\"": {
-          "remote": "origin",
-          "merge": "refs/heads/v2.2"
-        },
-        "0\"": {
-          "remote": "origin",
-          "merge": "refs/heads/net8.0"
-        }
-      }
-    },
-    "branch \"v2": {
-      "1\"": {
+      "v2$dot$1": {
         "remote": "origin",
         "merge": "refs/heads/v2.1"
       },
-      "2\"": {
+      "v2$dot$2": {
         "remote": "origin",
         "merge": "refs/heads/v2.2"
-      }
-    },
-    "branch \"net8": {
-      "0\"": {
+      },
+      "net8$dot$0": {
         "remote": "origin",
         "merge": "refs/heads/net8.0"
       }
@@ -2982,6 +2974,26 @@
       "develop": {
         "remote": "origin",
         "merge": "refs/heads/develop"
+      }
+    },
+    "gitflow": {
+      "branch": {
+        "master": "main",
+        "develop": "master"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "versiontag": "",
+        "bugfix": "bugfix/",
+        "support": "support/"
+      },
+      "path": {
+        "hooks": "C:/ScriptsApplications/code/router/.git/hooks"
+      },
+      "branch$dot$feature/restore_repos": {
+        "base": "main"
       }
     }
   },
