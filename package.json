@@ -1,15 +1,22 @@
 {
   "type": "module",
+  "scripts": {
+    "backup": "node --es-module-specifier-resolution=node --loader ts-node/esm ./reposMgr/backup.ts",
+    "restore": "node --es-module-specifier-resolution=node --loader ts-node/esm ./reposMgr/restore.ts"
+  },
   "devDependencies": {
     "@types/node": "^20.11.19",
+    "ini": "^4.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.17.0",
-    "@tensorflow/tfjs-node-gpu": "^4.17.0",
+    "@types/ini": "^4.1.0",
+    "@types/lodash": "^4.14.202",
     "csv-parser": "^3.0.0",
-    "lowdb": "^7.0.1"
+    "lowdb": "^7.0.1",
+    "semver": "^7.6.0"
   },
   "engines": {
     "node": ">=20.0.0",

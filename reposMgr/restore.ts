@@ -3,57 +3,54 @@ import fs from 'node:fs';
 import path from 'path';
 import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { extend } from './utils';
+import { extend, upgradeConfig } from './utils'
 import { factory } from './factory';
 
+async function restoreRepo(_ctx: Context) {
+    return Object.entries(_ctx.db.data).map(async ([relativePath, repo]) => {
+
+        if (relativePath == '__version') return;
+
+        let ctx = extend({}, _ctx, { rootDir: _ctx.rootDir, curDir: path.join(_ctx.rootDir, relativePath) });
+        let p = factory.find(async p => await p.shouldRestore(ctx, repo));
+        if (p) {
+            // 定义一个GitRepo对象，用于存储git库的信息
+            return await p.restoreRepo(ctx, repo)
+        }
+    })
+}
 export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
-        .then(db => {
+        .then(async db => {
             const ctx: Context = {
                 curDir: rootDir,
                 db,
-                rootDir: rootDir
+                rootDir
             };
-
+            await upgradeConfig(db)
             return ctx;
         })
-        .then(ctx => {
+        .then(async ctx => {
 
+            await restoreRepo(ctx)
             return ctx;
         })
-        .then(ctx => console.log('Done! Check the ' + ctx.rootDir + ' file for the results.'))
+        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDir + ' file for the results.'))
+        .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
-async function restoreRepo(rootDir: string, depth: number, ctx: Context) {
-
-    for (let key in ctx.db.data) {
-        let repo = ctx.db.data[key];
-        ctx.curDir = path.join(ctx.rootDir, key)
-        await Promise.all(factory.map(async p => {
-
-            // 判断是否存在.git目录
-            let shouldRestore = p.shouldRestore(ctx, repo)
-            // 如果是git库，获取其信息，并添加到数组中
-            if (shouldRestore) {
-                // 定义一个GitRepo对象，用于存储git库的信息
-                let result = await p.restoreRepo(ctx, repo)
-                if (!result) {
-                    console.log('Error: ' + ctx.curDir + ' is not a git repository!');
-                }
-            }
-            // 如果不是git库，递归调用findGitRepos函数，遍历子目录，深度减一
-            else {
-
-            }
-
-        }))
-    }
-}
-
-const CURRENT_DIR = ['C:\\ScriptsApplications', 'G:\\'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\ScriptsApplications\\test', 'G:\\test'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {
-    await findAndBackupRepos(CURRENT_DIR, MAX_DEPTH);
+    console.log(``)
+    console.log(``)
+    console.log(' ', '', '', '',)
+    console.log(`Starting: target:${ROOT_DIR}`)
+
+    if (!ROOT_DIR) {
+        console.error('not find target folder, please set it and retry again')
+    }
+    await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
 })();
