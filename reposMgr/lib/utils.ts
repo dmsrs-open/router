@@ -1,5 +1,5 @@
 import { Low } from "lowdb";
-import semver from "semver";
+
 import { Repos } from "./types";
 
 // utils.ts
@@ -76,33 +76,13 @@ export function extractQuotedValue(str: string): string | undefined {
     // 如果都没有找到匹配项，返回undefined
     return undefined;
 }
-export async function upgradeConfig(db: Low<Repos>) {
-    if (!Object.hasOwn(db.data, '__version')) {
-        db.data['__version'] = semver.parse('1.0.0');
-        for (let key in db.data) {
-            delete db.data[key]['remotes'];
-        }
-    }
-    else {
-        var version = db.data['__version'];
-        console.log('config db file version:', version.raw);
-        if (version === '1.0.0') {
-            // db.data['__version'] = '2.0.0'
-            // for (let key in db.data) {
-            //     let repo = db.data[key];
-            //     repo['remotes'] = repo['remotes'] || []
-            // }
-        }
-    }
-}
 
 
 export default {
     extend,
     removeDuplicates,
     getNextCharacter,
-    extractQuotedValue,
-    upgradeConfig
+    extractQuotedValue
 }
 
 function test_extend() {

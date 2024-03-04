@@ -1,10 +1,10 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Context, Repos } from './types'
+import { Context, Repos } from './lib/types'
 import { JSONFilePreset } from 'lowdb/node';
-import { extend, upgradeConfig } from './utils'
-import { factory } from './factory';
+import { extend } from './lib/utils'
+import { factory } from './lib/factory';
 
 async function restoreRepo(_ctx: Context) {
     return Object.entries(_ctx.db.data).map(async ([relativePath, repo]) => {
@@ -22,13 +22,13 @@ async function restoreRepo(_ctx: Context) {
 export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
+        // .then(db => upgradeConfig(db))
         .then(async db => {
             const ctx: Context = {
                 curDir: rootDir,
                 db,
                 rootDir
             };
-            await upgradeConfig(db)
             return ctx;
         })
         .then(async ctx => {

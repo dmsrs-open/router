@@ -1,26 +1,7 @@
 {
-  "__version": {
-    "options": {},
-    "loose": false,
-    "includePrerelease": false,
-    "raw": "1.0.0",
-    "major": 1,
-    "minor": 0,
-    "patch": 0,
-    "prerelease": [],
-    "build": [],
-    "version": "1.0.0"
-  },
+  "__version": "2.0.0",
   "\\code\\awesome-aop": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/dmsrs/awesome-aop.git",
@@ -37,14 +18,6 @@
   },
   "\\code\\BingGPT": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/dmsrs/BingGPT.git",
@@ -66,14 +39,6 @@
   },
   "\\code\\Bonobo.Git.Server": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "http://git.tsharp.org/Bonobo.Git.Server.git",
@@ -90,14 +55,6 @@
   },
   "\\code\\certificate-toolbox": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:niubilities/certificate-toolbox.git",
@@ -114,14 +71,6 @@
   },
   "\\code\\DbContextScope": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -149,14 +98,6 @@
   },
   "\\code\\DisruptiveSoftware.Cryptography.Tools1": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -176,14 +117,6 @@
   },
   "\\code\\dmsrs": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/dmsrs/dmsrs.git",
@@ -204,14 +137,6 @@
   },
   "\\code\\DmsrsAwesome": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/dmsrs/DmsrsAwesome.git",
@@ -233,14 +158,6 @@
   },
   "\\code\\DotNetCorePlugins": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git",
@@ -257,14 +174,6 @@
   },
   "\\code\\EmitMapper": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gui": {
       "wmstate": "zoomed",
       "geometry": "841x483+104+104 509 538"
@@ -300,20 +209,24 @@
       "master": {
         "remote": "origin",
         "merge": "refs/heads/master"
+      },
+      "v2$dot$1": {
+        "remote": "origin",
+        "merge": "refs/heads/v2.1"
+      },
+      "v2$dot$2": {
+        "remote": "origin",
+        "merge": "refs/heads/v2.2"
+      },
+      "net8$dot$0": {
+        "remote": "origin",
+        "merge": "refs/heads/net8.0"
       }
     },
     "name": "EmitMapper.git"
   },
   "\\code\\ETL": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/dmsrs/ETL.git",
@@ -331,14 +244,6 @@
   },
   "\\code\\Ext-EDF-Web-MVC": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gui": {
       "wmstate": "normal",
       "geometry": "1920x483+-76+144 470 436"
@@ -359,14 +264,6 @@
   },
   "\\code\\FastExpressionCompiler": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -394,14 +291,6 @@
   },
   "\\code\\git-awesome": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/cnjimbo/git-awesome.git",
@@ -426,14 +315,6 @@
   },
   "\\code\\my-repo": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/cnjimbo/vite-templates.git",
@@ -450,14 +331,6 @@
   },
   "\\code\\router": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gitflow \"branch\"": {
       "master": "main",
       "develop": "master"
@@ -515,20 +388,36 @@
       "develop": {
         "remote": "origin",
         "merge": "refs/heads/develop"
+      },
+      "feature/240304_support_submodules": {
+        "remote": "origin",
+        "merge": "refs/heads/feature/240304_support_submodules"
       }
     },
-    "name": "router.git"
+    "name": "router.git",
+    "gitflow": {
+      "branch": {
+        "master": "main",
+        "develop": "master"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "versiontag": "",
+        "bugfix": "bugfix/",
+        "support": "support/"
+      },
+      "path": {
+        "hooks": "C:/ScriptsApplications/code/router/.git/hooks"
+      },
+      "branch$dot$feature/240304_support_submodules": {
+        "base": "main"
+      }
+    }
   },
   "\\code\\TSharp": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/niubilityappbox/TSharp.git",
@@ -545,14 +434,6 @@
   },
   "\\code\\vba": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gui": {
       "wmstate": "normal",
       "geometry": "841x483+500+77 189 218"
@@ -577,14 +458,6 @@
   },
   "\\code-ai\\face-api-demo-vue": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/codeshelter/face-api-demo-vue.git",
@@ -602,14 +475,6 @@
   },
   "\\code-ai\\ReactComputerVisionTemplate": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gitflow \"branch\"": {
       "master": "main",
       "develop": "develop"
@@ -642,18 +507,27 @@
         "merge": "refs/heads/develop"
       }
     },
-    "name": "ReactComputerVisionTemplate.git"
+    "name": "ReactComputerVisionTemplate.git",
+    "gitflow": {
+      "branch": {
+        "master": "main",
+        "develop": "develop"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "bugfix": "bugfix/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "support": "support/",
+        "versiontag": ""
+      },
+      "path": {
+        "hooks": "C:/ScriptsApplications/code-ai/ReactComputerVisionTemplate/.git/hooks"
+      }
+    }
   },
   "\\code-ai\\tensorflow-handbook-javascript": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/ainiubility/tensorflow-handbook-javascript.git",
@@ -670,14 +544,6 @@
   },
   "\\code-ai\\tf-electron": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/ainiubility/tf-electron.git",
@@ -694,14 +560,6 @@
   },
   "\\code-ai\\tfjs_quick_start_course_2020": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/ainiubility/tfjs_quick_start_course_2020.git",
@@ -718,14 +576,6 @@
   },
   "\\code-ai\\time-series-forecasting-tensorflowjs": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/jinglescode/time-series-forecasting-tensorflowjs.git",
@@ -742,14 +592,6 @@
   },
   "\\code-front\\best-resume-ever": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:salomonelli/best-resume-ever.git",
@@ -766,14 +608,6 @@
   },
   "\\code-front\\isotope": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/codeshelter/isotope.git",
@@ -790,14 +624,6 @@
   },
   "\\code-front\\Isotope-JQuery-Plugin-Filtering-Sorting-Layouts": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/niubilityfrontend/Isotope-JQuery-Plugin-Filtering-Sorting-Layouts.git",
@@ -814,14 +640,6 @@
   },
   "\\code-front\\masonry-packery-isotope-demo": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/englishextra/masonry-packery-isotope-demo.git",
@@ -838,14 +656,6 @@
   },
   "\\code-front\\userscripts": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gui": {
       "wmstate": "zoomed",
       "geometry": "1532x848+31+0 422 492"
@@ -891,15 +701,6 @@
   },
   "\\code-front\\vite-plugin-monkey": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true,
-      "hooksPath": ".husky"
-    },
     "submodule": {
       "active": "."
     },
@@ -924,14 +725,6 @@
   },
   "\\code-front\\vite-plugin-userscript": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -951,14 +744,6 @@
   },
   "\\code-front\\vite-templates": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/cnjimbo/vite-templates.git",
@@ -1013,14 +798,6 @@
   },
   "\\code-front\\vite-userscript-plugin": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": ".",
       "examples/reatom": {
@@ -1043,14 +820,6 @@
   },
   "\\code-front\\vitelearn-allin": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/tsharp/vitelearn-allin.git",
@@ -1071,14 +840,6 @@
   },
   "\\code-front\\vscode-babel-compile-on-save": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gui": {
       "wmstate": "normal",
       "geometry": "841x483+620+143 189 218"
@@ -1104,14 +865,6 @@
   },
   "\\code-front\\vscode-run-scripts-configurations": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/vscode-run-scripts-configurations.git",
@@ -1128,14 +881,6 @@
   },
   "\\code-front\\vue-modern-resume": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/evryn/vue-modern-resume.git",
@@ -1152,14 +897,6 @@
   },
   "\\code-front\\vue-resume": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gui": {
       "wmstate": "normal",
       "geometry": "841x483+208+208 189 218"
@@ -1180,14 +917,6 @@
   },
   "\\code-front\\vuetify-admin": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:okami101/vuetify-admin.git",
@@ -1204,14 +933,6 @@
   },
   "\\code-front\\Vuetify-Resume": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:niubilityfrontend/Vuetify-Resume.git",
@@ -1232,14 +953,6 @@
   },
   "\\code-front\\wx聊天应用\\chat-app-backend": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": true,
-      "bare": false,
-      "logallrefupdates": true,
-      "ignorecase": true,
-      "precomposeunicode": true
-    },
     "remote": {
       "heroku": {
         "url": "https://git.heroku.com/damp-brushlands-96654.git",
@@ -1250,14 +963,6 @@
   },
   "\\code-learn\\abp": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:abpframework/abp.git",
@@ -1274,14 +979,6 @@
   },
   "\\code-learn\\Admin.NET": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/zuohuaijun/Admin.NET.git",
@@ -1298,14 +995,6 @@
   },
   "\\code-learn\\adnc": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/AlphaYu/adnc.git",
@@ -1322,14 +1011,6 @@
   },
   "\\code-learn\\aspnetcore-modular-monolith": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/thinktecture-labs/aspnetcore-modular-monolith.git",
@@ -1346,14 +1027,6 @@
   },
   "\\code-learn\\AuditLogging": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -1373,14 +1046,6 @@
   },
   "\\code-learn\\dockpanelsuite": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/niubilitywindows/dockpanelsuite.git",
@@ -1397,14 +1062,6 @@
   },
   "\\code-learn\\DotnetSpider": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:dotnetcore/DotnetSpider.git",
@@ -1421,14 +1078,6 @@
   },
   "\\code-learn\\Elements": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/FlorianFe/Elements.git",
@@ -1445,14 +1094,6 @@
   },
   "\\code-learn\\EventBus\\CAP": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/dotnetcore/CAP.git",
@@ -1469,14 +1110,6 @@
   },
   "\\code-learn\\EventBus\\MediatR": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/jbogard/MediatR.git",
@@ -1493,14 +1126,6 @@
   },
   "\\code-learn\\EventBus\\RedBus": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -1528,14 +1153,6 @@
   },
   "\\code-learn\\Furion": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/dotnetchina/Furion.git",
@@ -1552,14 +1169,6 @@
   },
   "\\code-learn\\git-gears-cs": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -1580,14 +1189,6 @@
   },
   "\\code-learn\\mavonEditor": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "gui": {
       "wmstate": "normal",
       "geometry": "841x483+239+79 189 218"
@@ -1608,14 +1209,6 @@
   },
   "\\code-learn\\modify-source-webpack-plugin": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/artemirq/modify-source-webpack-plugin.git",
@@ -1632,14 +1225,6 @@
   },
   "\\code-learn\\modular-monolith-aspnet-core-sample": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/iammukeshm/modular-monolith-aspnet-core-sample.git",
@@ -1656,14 +1241,6 @@
   },
   "\\code-learn\\module-shop": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/codeshelter/module-shop.git",
@@ -1685,14 +1262,6 @@
   },
   "\\code-learn\\NetCoreMicroservicesSample": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/madslundt/NetCoreMicroservicesSample.git",
@@ -1709,14 +1278,6 @@
   },
   "\\code-learn\\nopCommerce": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/nopSolutions/nopCommerce.git",
@@ -1733,14 +1294,6 @@
   },
   "\\code-learn\\OpenAuth.Net": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/dotnetchina/OpenAuth.Net.git",
@@ -1757,14 +1310,6 @@
   },
   "\\code-learn\\OrchardCore": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/OrchardCMS/OrchardCore.git",
@@ -1781,14 +1326,6 @@
   },
   "\\code-learn\\osharp": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:dotnetcore/osharp.git",
@@ -1805,15 +1342,6 @@
   },
   "\\code-learn\\osharp-vben-admin": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true,
-      "hooksPath": ".husky"
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:zionLZH/osharp-vben-admin.git",
@@ -1830,14 +1358,6 @@
   },
   "\\code-learn\\RibbonWinForms": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/niubilitywindows/RibbonWinForms.git",
@@ -1854,14 +1374,6 @@
   },
   "\\code-learn\\sentry-dotnet": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/getsentry/sentry-dotnet.git",
@@ -1878,14 +1390,6 @@
   },
   "\\code-learn\\Serenity": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/serenity-is/Serenity.git",
@@ -1902,14 +1406,6 @@
   },
   "\\code-learn\\Smartstore": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/smartstore/Smartstore.git",
@@ -1926,14 +1422,6 @@
   },
   "\\code-learn\\Util": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "git@github.com:niubilitynetcore/Util.git",
@@ -1950,14 +1438,6 @@
   },
   "\\code-learn\\vc-platform": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VirtoCommerce/vc-platform.git",
@@ -1974,14 +1454,6 @@
   },
   "\\code-learn\\vc-storefront": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VirtoCommerce/vc-storefront.git",
@@ -1998,14 +1470,6 @@
   },
   "\\code-learn\\War3Net": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": ".",
       "submodules/FastMDX": {
@@ -2013,6 +1477,9 @@
       },
       "submodules/JpegLibrary": {
         "url": "https://github.com/Drake53/JpegLibrary"
+      },
+      "submodules/CSharp$dot$lua": {
+        "url": "https://github.com/Drake53/CSharp.lua"
       }
     },
     "submodule \"submodules/CSharp": {
@@ -2036,14 +1503,6 @@
   },
   "\\code-learn\\ZRAdmin-vue": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/izory/ZRAdmin-vue.git",
@@ -2060,14 +1519,6 @@
   },
   "\\code-learn\\ZrAdminNetCore": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://gitee.com/izory/ZrAdminNetCore.git",
@@ -2088,14 +1539,6 @@
   },
   "\\code-Pfizer\\00_ChinaBidding": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -2122,14 +1565,6 @@
   },
   "\\code-Pfizer\\00_TNT": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -2152,14 +1587,6 @@
   },
   "\\code-Pfizer\\ChinaDigitalHub": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "submodule": {
       "active": "."
     },
@@ -2186,14 +1613,6 @@
   },
   "\\code-vPress\\99_ruanyf-weekly": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/ruanyf-weekly.git",
@@ -2214,14 +1633,6 @@
   },
   "\\code-vPress\\adocs": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/adocs.git",
@@ -2238,14 +1649,6 @@
   },
   "\\code-vPress\\blog": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/blog.git",
@@ -2262,14 +1665,6 @@
   },
   "\\code-vPress\\blog-theme": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/blog-theme.git",
@@ -2290,14 +1685,6 @@
   },
   "\\code-vPress\\charles7c.github.io": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/charles7c.github.io.git",
@@ -2314,14 +1701,6 @@
   },
   "\\code-vPress\\cnjimbo.github.io": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/cnjimbo/cnjimbo.github.io.git",
@@ -2347,14 +1726,6 @@
   },
   "\\code-vPress\\codeteenager.github.io": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/codeteenager.github.io.git",
@@ -2371,15 +1742,6 @@
   },
   "\\code-vPress\\flypeng-tool": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true,
-      "hooksPath": ".husky"
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/flypeng-tool.git",
@@ -2400,14 +1762,6 @@
   },
   "\\code-vPress\\hdu-cs-wiki": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/hdu-cs-wiki.git",
@@ -2424,14 +1778,6 @@
   },
   "\\code-vPress\\liuly0322.github.io": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/liuly0322.github.io.git",
@@ -2452,14 +1798,6 @@
   },
   "\\code-vPress\\mtgjson-website": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/mtgjson-website.git",
@@ -2476,15 +1814,6 @@
   },
   "\\code-vPress\\npm-vue3": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true,
-      "hooksPath": ".husky/_"
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/npm-vue3.git",
@@ -2505,14 +1834,6 @@
   },
   "\\code-vPress\\qisi007.github.io": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/qisi007.github.io.git",
@@ -2529,14 +1850,6 @@
   },
   "\\code-vPress\\strongQ.github.io": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/strongQ.github.io.git",
@@ -2553,14 +1866,6 @@
   },
   "\\code-vPress\\sugar-blog": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/sugar-blog.git",
@@ -2577,26 +1882,10 @@
   },
   "\\code-vPress\\test": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "name": "unknown"
   },
   "\\code-vPress\\vite-plugin-vitepress-auto-sidebar": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vite-plugin-vitepress-auto-sidebar.git",
@@ -2613,14 +1902,6 @@
   },
   "\\code-vPress\\vitepress-blog-pure": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/vitepress-blog-pure.git",
@@ -2637,14 +1918,6 @@
   },
   "\\code-vPress\\vitepress-blog-starter": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vitepress-blog-starter.git",
@@ -2661,14 +1934,6 @@
   },
   "\\code-vPress\\vitepress-blogmate": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vitepress-blogmate.git",
@@ -2685,14 +1950,6 @@
   },
   "\\code-vPress\\vitepress-doc": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/Yiov/vitepress-doc.git",
@@ -2709,14 +1966,6 @@
   },
   "\\code-vPress\\vitepress-docs": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vitepress-docs.git",
@@ -2733,14 +1982,6 @@
   },
   "\\code-vPress\\vitepress-export-pdf": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vitepress-export-pdf.git",
@@ -2757,14 +1998,6 @@
   },
   "\\code-vPress\\vitepress-fun": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/gumingWu/vitepress-fun.git",
@@ -2781,15 +2014,6 @@
   },
   "\\code-vPress\\vitepress-theme-reco": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true,
-      "hooksPath": ".husky/_"
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vitepress-theme-reco.git",
@@ -2811,14 +2035,6 @@
   },
   "\\code-vPress\\vitepress-theme-sakura": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/flaribbit/vitepress-theme-sakura.git",
@@ -2835,14 +2051,6 @@
   },
   "\\code-vPress\\vitepress-theme-vuetom": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vitepress-theme-vuetom.git",
@@ -2863,14 +2071,6 @@
   },
   "\\code-vPress\\vuepress-theme-reco": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/vuepress-theme-reco.git",
@@ -2887,14 +2087,6 @@
   },
   "\\code-vPress\\website": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/website.git",
@@ -2911,14 +2103,6 @@
   },
   "\\code-vPress\\yuque-vitepress": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/yuque-vitepress.git",
@@ -2935,14 +2119,6 @@
   },
   "\\code-vPress\\ZiuChen.github.io": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/VitePressAwesome/ZiuChen.github.io.git",
@@ -2963,14 +2139,6 @@
   },
   "\\code-vsextension\\npm-scripts-auto-node": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/npm-scripts-auto-node.git",
@@ -2987,14 +2155,6 @@
   },
   "\\code-vsextension\\script-buttons": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/script-buttons.git",
@@ -3011,14 +2171,6 @@
   },
   "\\code-vsextension\\vscode-commit-message-editor": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/vscode-commit-message-editor.git",
@@ -3035,14 +2187,6 @@
   },
   "\\code-vsextension\\vscode-conventional-commits": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/vscode-conventional-commits.git",
@@ -3059,14 +2203,6 @@
   },
   "\\code-vsextension\\vscode-extension-samples": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/microsoft/vscode-extension-samples.git",
@@ -3083,14 +2219,6 @@
   },
   "\\code-vsextension\\vscode-npm-scripts": {
     "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
     "remote": {
       "origin": {
         "url": "https://github.com/frontendniubility/vscode-npm-scripts.git",
@@ -3104,5 +2232,21 @@
       }
     },
     "name": "vscode-npm-scripts.git"
+  },
+  "\\code-ai\\CNN-LSTM-Attention": {
+    "__processorName": ".git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/CNN-LSTM-Attention.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "CNN-LSTM-Attention.git"
   }
 }

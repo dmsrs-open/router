@@ -19,7 +19,8 @@
   },
   "conventionalCommits.scopes": [
     "backup and restore gitrepo",
-    "backup repos"
+    "backup repos",
+    "submodule support"
   ],
   "code-runner.saveFileBeforeRun": true,
   "code-runner.showExecutionMessage": true,
@@ -28,5 +29,6 @@
     "bat": ".bat",
     "powershell": ".ps1",
     "typescript": ".ts"
-  }
+  },
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }

@@ -1,16 +1,55 @@
 import { exec, execSync } from 'child_process';
 import { Repo } from './types';
+import { string } from '@tensorflow/tfjs';
 
 // 创建一个异步函数来执行git clone命令
 export function gitClone(repo: Repo, targetDir: string) {
+    repo = sectionNameUnescape(repo);
+    try {
+        if (repo?.remote) {
+            Object.entries(repo?.remote)
+                .map(([name, remoteConfig]) => {
+                    // console.log(`=====`)
+                    // console.log(`Restore... ${name} = ${remoteConfig.url} to ${targetDir}`);
+                    return cloneOrAddRemote(targetDir, name, remoteConfig.url)
+                    return true
+                })
+        }
+        else {
+            console.error(`Restore ignored,no remote:${JSON.stringify(repo)}`)
+        }
+    } catch (e) {
+        console.log(`error>>> ${JSON.stringify(repo)}`)
+    }
 
-    Object.entries(repo.remote)
-        .map(([name, remoteConfig]) => {
-            console.log(`=====`)
-            console.log(`Restore... ${name} = ${remoteConfig.url} to ${targetDir}`);
-            return cloneOrAddRemote(targetDir, name, remoteConfig.url)
-        })
 }
+
+
+
+function sectionNameUnescape(repo: Repo) {
+
+    return Object.entries(repo).reduce((acc, [key, value]) => {
+
+        acc[key] = Object.entries(value).reduce((_acc, [_name, _value]) => {
+            return changeKey(_acc, _name, _value);
+        }, value);
+
+
+        return changeKey(acc, key, value);
+
+    }, repo)
+
+    function changeKey(_acc: any, _name: string, _value: any) {
+        if (_name.includes('$dot$')) {
+            _acc[_name.replaceAll('$dot$', '.')] = _value
+            delete _acc[_name]
+        }
+        return _acc;
+    }
+
+
+}
+
 
 function executeCommand(command: string) {
     return execSync(command, { encoding: 'utf-8' }).trim();
