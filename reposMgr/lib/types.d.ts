@@ -46,4 +46,4 @@ export type Repo = {
         [name: string]: Remote
     };
     submodule?: Submodule
-} & {}; // optional list of remote repositories
+}; // optional list of remote repositories

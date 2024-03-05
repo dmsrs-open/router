@@ -1,6 +1,6 @@
 import { Low } from "lowdb";
 
-import { Repos } from "./types";
+import { Repo, Repos } from "./types";
 
 export async function upgradeConfig(db: Low<Repos>) {
 
@@ -40,11 +40,12 @@ export async function upgradeConfig(db: Low<Repos>) {
                 if (ignorePathStarts.findIndex(v => key.startsWith(v)) > -1) {
                     delete db.data[key];
                 } else {
-                    let repo = db.data[key];
-                    ignoreRepoKeys.forEach(name => {
-                        delete repo[name];
+                    let repo = db.data[key], newrepo: Repo = { name: undefined }
+
+                    keepedRepoKeys.forEach(name => {
+                        newrepo[name] = repo[name];
                     })
-                    db.data[key] = repo
+                    db.data[key] = newrepo
                 }
             }
 
@@ -55,5 +56,5 @@ export async function upgradeConfig(db: Low<Repos>) {
 
 }
 
-export const ignoreRepoKeys = ['core', 'branch'];
+export const keepedRepoKeys = ['__processorName', 'name', 'remote', 'submodule', 'gitflow'];
 export const ignorePathStarts = ['test'];

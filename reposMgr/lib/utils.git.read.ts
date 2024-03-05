@@ -1,7 +1,7 @@
 import fs, { PathLike } from "node:fs";
 import * as ini from 'ini';
 import { Repo } from './types';
-import { ignoreRepoKeys } from "./upgradeConfig";
+import { keepedRepoKeys } from "./upgradeConfig";
 
 export function readGitConfig(configPath: PathLike) {
     // 读取.git/config文件
@@ -26,10 +26,12 @@ export function readGitConfig(configPath: PathLike) {
             console.error(' ', 'config Content', configContent);
             console.error(' ', 'git config:', gitConfig);
         }
-        ignoreRepoKeys.forEach(name => {
-            delete gitConfig[name];
+
+        let newrepo: Repo = { name: undefined }
+        keepedRepoKeys.forEach(name => {
+            newrepo[name] = gitConfig[name];
         })
-        return gitConfig;
+        return newrepo;
     } catch (err) {
         console.error('error on reading:', configPath, 'content:', configContent, 'error:', err.message, ',', err.stack);
         return {
