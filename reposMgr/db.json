@@ -1980,5 +1980,14 @@
         "hooks": "C:/ScriptsApplications/code-ai/CNN-LSTM-Attention/.git/hooks"
       }
     }
+  },
+  "\\code-ai\\cs230-code-examples": {
+    "name": "cs230-code-examples.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cs230-stanford/cs230-code-examples.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    }
   }
 }
