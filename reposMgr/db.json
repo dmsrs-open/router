@@ -1989,5 +1989,14 @@
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     }
+  },
+  "\\code-ai\\tensorflow2_tutorials_chinese": {
+    "name": "tensorflow2_tutorials_chinese.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:ainiubility/tensorflow2_tutorials_chinese.git",
+        "fetch": "+refs/heads/master:refs/remotes/origin/master"
+      }
+    }
   }
 }

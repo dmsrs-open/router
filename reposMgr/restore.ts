@@ -1,16 +1,16 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Context, Repos } from './lib/types'
+import { Context, Repos, Repo } from './lib/types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend } from './lib/utils'
 import { factory } from './lib/factory';
 
 async function restoreRepo(_ctx: Context) {
-    return Object.entries(_ctx.db.data).map(async ([relativePath, repo]) => {
+    return Object.entries(_ctx.db.data).map(async ([relativePath, repo]: [string, Repo]) => {
 
         if (relativePath == '__version') return;
-
+        // todo: $dot$ to .
         let ctx = extend({}, _ctx, { rootDir: _ctx.rootDir, curDir: path.join(_ctx.rootDir, relativePath) });
         let p = factory.find(async p => await p.shouldRestore(ctx, repo));
         if (p) {

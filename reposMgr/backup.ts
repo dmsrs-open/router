@@ -5,7 +5,7 @@ import { Context, Repos } from './lib/types'
 import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './lib/factory';
 import { extend } from './lib/utils';
-
+import { ignorePathStarts } from './lib/upgradeConfig';
 
 async function findRepos(dir: string, depth: number, ctx: Context): Promise<void> {
     if (depth === 0) {
@@ -16,6 +16,9 @@ async function findRepos(dir: string, depth: number, ctx: Context): Promise<void
 
     // 遍历所有文件和子目录
     for (let file of files) {
+        if (ignorePathStarts.findIndex(v => file.startsWith(v)) > -1) {
+            continue;
+        }
         // 拼接完整的路径
         let curDirPath = path.join(dir, file);
         let key = curDirPath.replace(ctx.rootDir, '')

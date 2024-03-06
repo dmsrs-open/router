@@ -1,6 +1,5 @@
 import { exec, execSync } from 'child_process';
 import { Repo } from './types';
-import { string } from '@tensorflow/tfjs';
 
 // 创建一个异步函数来执行git clone命令
 export function gitClone(repo: Repo, targetDir: string) {
