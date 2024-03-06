@@ -8,7 +8,6 @@ export function readGitConfig(configPath: PathLike) {
     let configContent = '';
     let gitConfig: Repo = null;
 
-    // const prefixes = ['remote', 'branch', 'submodule']
     try {
         configContent = fs.readFileSync(configPath, 'utf-8');
         configContent = sectionNameEscape(configContent)
@@ -27,11 +26,21 @@ export function readGitConfig(configPath: PathLike) {
             console.error(' ', 'git config:', gitConfig);
         }
 
-        let newrepo: Repo = { name: undefined }
-        keepedRepoKeys.forEach(name => {
-            newrepo[name] = gitConfig[name];
+        Object.keys(gitConfig).forEach(prop => {
+            if (keepedRepoKeys.findIndex(k => prop == k) == -1)
+                delete gitConfig[prop]
         })
-        return newrepo;
+        if (gitConfig.remote) {
+            Object.values(gitConfig.remote).forEach(v => {
+                let k = Object.keys(v).forEach(k => {
+                    if (k != 'url') {
+                        delete v[k];
+                    }
+                })
+            })
+        }
+
+        return gitConfig;
     } catch (err) {
         console.error('error on reading:', configPath, 'content:', configContent, 'error:', err.message, ',', err.stack);
         return {

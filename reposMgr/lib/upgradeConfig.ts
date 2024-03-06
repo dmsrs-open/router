@@ -17,7 +17,7 @@ export async function upgradeConfig(db: Low<Repos>) {
             let version: any = db.data['__version']
             var type = typeof version
             if (type === 'object') {
-                db.data['__version'] = version = version.raw
+                db.data['__version'] = version = '2.0.0'
                 db.write()
             } else if (type === 'string') {
 
@@ -40,12 +40,23 @@ export async function upgradeConfig(db: Low<Repos>) {
                 if (ignorePathStarts.findIndex(v => key.startsWith(v)) > -1) {
                     delete db.data[key];
                 } else {
-                    let repo = db.data[key], newrepo: Repo = { name: undefined }
-
-                    keepedRepoKeys.forEach(name => {
-                        newrepo[name] = repo[name];
-                    })
-                    db.data[key] = newrepo
+                    let repo = db.data[key]
+                    if (typeof repo === 'object')
+                        Object.keys(repo).forEach(prop => {
+                            if (keepedRepoKeys.findIndex(k => prop == k) == -1) {
+                                delete repo[prop]
+                            }
+                        })
+                    if (repo.remote) {
+                        Object.values(repo.remote).forEach(v => {
+                            let k = Object.keys(v).forEach(k => {
+                                if (k != 'url') {
+                                    delete v[k];
+                                }
+                            })
+                        })
+                    }
+                    db.data[key] = repo
                 }
             }
 
@@ -56,5 +67,5 @@ export async function upgradeConfig(db: Low<Repos>) {
 
 }
 
-export const keepedRepoKeys = ['__processorName', 'name', 'remote', 'submodule', 'gitflow'];
-export const ignorePathStarts = ['test','.devhome'];
+export const keepedRepoKeys = ['name', '__processorName', 'remote', 'submodule']; //, 'gitflow'
+export const ignorePathStarts = ['test', '.devhome'];
