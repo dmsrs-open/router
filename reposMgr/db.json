@@ -2694,5 +2694,14 @@
     "name": "vscode-npm-scripts.git",
     "__processorName": ".git"
   },
-  "__version": "2.0.0"
+  "__version": "2.0.0",
+  "code-ai\\Code\\cocoapi": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cocodataset/cocoapi.git"
+      }
+    },
+    "name": "cocoapi.git",
+    "__processorName": ".git"
+  }
 }
