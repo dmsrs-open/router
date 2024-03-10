@@ -1913,6 +1913,9 @@
     "remote": {
       "origin": {
         "url": "https://github.com/ainiubility/CNN-LSTM-Attention.git"
+      },
+      "upstream": {
+        "url": "https://github.com/wqk666999/CNN-LSTM-Attention.git"
       }
     },
     "name": "CNN-LSTM-Attention.git",
@@ -2811,6 +2814,24 @@
       }
     },
     "name": "cocoapi.git",
+    "__processorName": ".git"
+  },
+  "code-ai\\tensorflow2.0-tutorial": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tensorflow2.0-tutorial.git"
+      }
+    },
+    "name": "tensorflow2.0-tutorial.git",
+    "__processorName": ".git"
+  },
+  "tensorflow_gpu\\tensorflow": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/tensorflow/tensorflow.git"
+      }
+    },
+    "name": "tensorflow.git",
     "__processorName": ".git"
   }
 }
