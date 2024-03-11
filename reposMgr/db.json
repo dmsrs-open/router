@@ -2833,5 +2833,14 @@
     },
     "name": "tensorflow.git",
     "__processorName": ".git"
+  },
+  "code-ai\\eat_tensorflow2_in_30_days": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/eat_tensorflow2_in_30_days.git"
+      }
+    },
+    "name": "eat_tensorflow2_in_30_days.git",
+    "__processorName": ".git"
   }
 }

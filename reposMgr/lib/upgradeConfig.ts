@@ -68,4 +68,4 @@ export async function upgradeConfig(db: Low<Repos>) {
 }
 
 export const keepedRepoKeys = ['name', '__processorName', 'remote', 'submodule']; //, 'gitflow'
-export const ignorePathStarts = ['test', '.devhome'];
+export const ignorePathStarts = ['test', '.devhome','$RECYCLE.BIN'];
