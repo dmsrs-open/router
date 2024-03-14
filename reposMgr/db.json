@@ -2002,24 +2002,6 @@
     "name": "time-series-forecasting-tensorflowjs.git",
     "__processorName": ".git"
   },
-  "code-ai\\train_arch": {
-    "remote": {
-      "origin": {
-        "url": "https://github.com/ainiubility/train_arch.git"
-      }
-    },
-    "name": "train_arch.git",
-    "__processorName": ".git"
-  },
-  "code-ai\\VizWiz_LSTM_CNN_Attention": {
-    "remote": {
-      "origin": {
-        "url": "https://github.com/ainiubility/VizWiz_LSTM_CNN_Attention.git"
-      }
-    },
-    "name": "VizWiz_LSTM_CNN_Attention.git",
-    "__processorName": ".git"
-  },
   "code-front\\best-resume-ever": {
     "remote": {
       "origin": {
@@ -2841,6 +2823,15 @@
       }
     },
     "name": "eat_tensorflow2_in_30_days.git",
+    "__processorName": ".git"
+  },
+  "code-ai\\dlaicourse": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/ailearn.git"
+      }
+    },
+    "name": "ailearn.git",
     "__processorName": ".git"
   }
 }

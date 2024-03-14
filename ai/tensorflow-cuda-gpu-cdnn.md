@@ -13,7 +13,7 @@ https://tensorflow.google.cn/install/pip#windows-wsl2
 conda activate py310-tf215 #your env name
 ## No need
 # pip install tensorrt-bindings tensorrt-libs -i https://pypi.nvidia.com
-pip install -U tensorflow[and-cuda]
+pip install -U tensorflow[and-cuda] -i https://pypi.nvidia.com
 
 ```
  安装过程会下载和安装很多个组件。我这边下载速度大概800k/s，安装用了一个小时。安装完成后用下面的语句验证：
