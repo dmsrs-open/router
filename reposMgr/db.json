@@ -2833,5 +2833,41 @@
     },
     "name": "ailearn.git",
     "__processorName": ".git"
+  },
+  "\\code-ai\\ailearn": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/ailearn.git"
+      }
+    },
+    "name": "ailearn.git",
+    "__processorName": ".git"
+  },
+  "\\code-ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git"
+      }
+    },
+    "name": "CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git",
+    "__processorName": ".git"
+  },
+  "\\code-ai\\keract": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/keract.git"
+      }
+    },
+    "name": "keract.git",
+    "__processorName": ".git"
+  },
+  "\\code-ai\\tensorflow2_tutorials": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tensorflow2_tutorials.git"
+      }
+    },
+    "name": "tensorflow2_tutorials.git",
+    "__processorName": ".git"
   }
 }

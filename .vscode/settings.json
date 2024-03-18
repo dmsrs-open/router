@@ -20,7 +20,8 @@
   "conventionalCommits.scopes": [
     "backup and restore gitrepo",
     "backup repos",
-    "submodule support"
+    "submodule support",
+    "update git repo db"
   ],
   "code-runner.saveFileBeforeRun": true,
   "code-runner.showExecutionMessage": true,
