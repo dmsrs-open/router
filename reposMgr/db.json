@@ -2869,5 +2869,14 @@
     },
     "name": "tensorflow2_tutorials.git",
     "__processorName": ".git"
+  },
+  "\\code-ai\\Time-Series-Analysis-Tutorial": {
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/Time-Series-Analysis-Tutorial.git"
+      }
+    },
+    "name": "Time-Series-Analysis-Tutorial.git",
+    "__processorName": ".git"
   }
 }
