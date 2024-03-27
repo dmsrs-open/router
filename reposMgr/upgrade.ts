@@ -15,7 +15,7 @@ export async function upgradeReposDatabase(rootDir: string, maxDepth: number): P
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
-const ROOT_DIR = ['C:\\ScriptsApplications', 'G:'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\AppData', 'G:'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {

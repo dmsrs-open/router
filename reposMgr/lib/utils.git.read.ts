@@ -61,7 +61,7 @@ function sectionNameEscape(str: string) {
 
 
 
-// const gitConfigPath = path.join(`C:/ScriptsApplications/code-front/vite-templates`, `.git`, 'config');
+// const gitConfigPath = path.join(`C:/AppData/code-front/vite-templates`, `.git`, 'config');
 // const test = `[core]
 // 	repositoryformatversion = 0
 // 	filemode = false

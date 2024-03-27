@@ -42,8 +42,8 @@ console.log(num ** 2);
 Running the `ts-node index.ts` command will result in the ERR\_UNKNOWN\_FILE\_EXTENSION `TypeError` in ts-node:
 
 ```powershell
-C:\ScriptsApplications\code\router\dev home>npx ts-node test.ts
-TypeError: Unknown file extension ".ts" for C:\ScriptsApplications\code\router\dev home\test.ts
+C:\AppData\code\router\dev home>npx ts-node test.ts
+TypeError: Unknown file extension ".ts" for C:\AppData\code\router\dev home\test.ts
     at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:160:9)
     at defaultGetFormat (node:internal/modules/esm/get_format:203:36)
     at defaultLoad (node:internal/modules/esm/load:143:22)
