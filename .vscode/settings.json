@@ -13,9 +13,9 @@
   "explorerExclude.backup": {},
   "CodeGPT.apiKey": "CodeGPT Plus Beta",
   "code-runner.executorMap": {
-    "typescript": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName",
+    "typescript": "cd $dir && node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName",
     "ts": "node --es-module-specifier-resolution=node --loader ts-node/esm $fullFileName",
-    "javascript": "node  --es-module-specifier-resolution=node  $fullFileName",
+    "javascript": "cd $dir && node  --es-module-specifier-resolution=node  $fullFileName",
   },
   "conventionalCommits.scopes": [
     "backup and restore gitrepo",
